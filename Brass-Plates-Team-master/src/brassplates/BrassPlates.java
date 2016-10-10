@@ -5,11 +5,11 @@
  */
 package brassplates;
 
-//import byui.cit260.brassPlates.model.worldMap;
 import byui.cit260.brassPlates.model.Actor;
-//import byui.cit260.brassPlates.model.Location;
+import byui.cit260.brassPlates.model.LocationTypeScene;
 import byui.cit260.brassPlates.model.Player;
-//import byui.cit260.brassPlates.model.World;
+import byui.cit260.brassPlates.model.ResourceTypeScene;
+import byui.cit260.brassPlates.model.Scene;
 
 /**
  *
@@ -21,7 +21,7 @@ public class BrassPlates {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
         Player playerOne = new Player();
         
         playerOne.setName("Bob Hope");
@@ -37,34 +37,31 @@ public class BrassPlates {
         actorOne.setCoordinates("Jerusalem");
         
         String actorInfo = actorOne.toString();
-        System.out.println(actorInfo);
+        System.out.println(actorInfo); 
         
-        /*World worldMap = new worldMap();
+        Scene sceneOne = new Scene();
         
-        worldMap.setDirection(worldMap);
-        worldMap.setColumnNum(3);
-        worldMap.setRowNum(2);
+        sceneOne.setDescription("Jerusalem");
+        sceneOne.setTravelTime(3.0);
+        sceneOne.setBlockedLocation("Blocked");
+        sceneOne.setAvailableLocation("Available");
         
-        String worldMap = worldMap.toString();
-        System.out.print
+        String sceneInfo = sceneOne.toString();
+        System.out.println(sceneInfo);
         
+        ResourceTypeScene resourceSceneOne = new ResourceTypeScene();
         
+        resourceSceneOne.setAmountAvailable(50.0);
+        resourceSceneOne.setResourceType("Inheritance");
         
+        String resourceSceneOneInfo = resourceSceneOne.toString();
+        System.out.println(resourceSceneOneInfo);
         
-        Location myLocation = new Location();
+        LocationTypeScene locationSceneOne = new LocationTypeScene();
         
-        myLocation.setRowNum(2);
-        myLocation.setColumnNum(3);
-        myLocation.setVisited(true);
-        myLocation.setAmountRemaining(10);
-        myLocation.setName("Jerusalem");
+        locationSceneOne.setDescription("Lehi's House");
         
-        String myLocation = myLocation.toString();
-        System.out.println(myLocation);
-      */  
-        
-        
-        
-        
+        String locationSceneInfo = locationSceneOne.toString();
+        System.out.println(locationSceneInfo);
     }
 }
