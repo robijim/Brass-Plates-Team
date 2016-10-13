@@ -5,6 +5,8 @@
  */
 package brassplateteam;
 
+import byui.cit260.brassPlatesTeam.model.Game;
+import byui.cit260.brassPlatesTeam.model.Inventory;
 import byui.cit260.brassPlatesTeam.model.Item;
 
 /**
@@ -17,6 +19,27 @@ public class BrassPlateTeam {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        // related to Inventory
+        Inventory inventoryOne = new Inventory();
+        
+        inventoryOne.setItemType("important");
+        inventoryOne.setAmountCollected(2);
+        inventoryOne.setAmountNeeded(4);
+        
+        String inventoryInfo = inventoryOne.toString();      
+        System.out.println(inventoryInfo);
+        
+        // related to Game.
+        
+        Game gameOne = new Game();
+        
+        gameOne.setTotalTime(7.0);
+        
+        String gameInfo = gameOne.toString();      
+        System.out.println(gameInfo);
+        
+        // related to Item.
+  
         Item itemOne = new Item();
         
         itemOne.setName("The plates of brass");
