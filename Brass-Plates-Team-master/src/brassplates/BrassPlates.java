@@ -6,7 +6,11 @@
 package brassplates;
 
 import byui.cit260.brassPlates.model.Actor;
+<<<<<<< HEAD
 import byui.cit260.brassPlates.model.LocationTypeScene;
+=======
+import byui.cit260.brassPlates.model.Location;
+>>>>>>> SceneAndLocationClasses
 import byui.cit260.brassPlates.model.Player;
 import byui.cit260.brassPlates.model.ResourceTypeScene;
 import byui.cit260.brassPlates.model.Scene;

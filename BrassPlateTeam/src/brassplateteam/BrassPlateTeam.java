@@ -8,6 +8,13 @@ package brassplateteam;
 import byui.cit260.brassPlatesTeam.model.Game;
 import byui.cit260.brassPlatesTeam.model.Inventory;
 import byui.cit260.brassPlatesTeam.model.Item;
+import byui.cit260.brassPlatesTeam.model.LocationTypeScene;
+import byui.cit260.brassPlatesTeam.model.ResourceTypeScene;
+import byui.cit260.brassPlatesTeam.model.Scene;
+import byui.cit260.brassPlatesTeam.model.Player;
+import byui.cit260.brassPlatesTeam.model.Actor;
+import byui.cit260.brassPlatesTeam.model.Map;
+
 
 /**
  *
@@ -20,6 +27,47 @@ public class BrassPlateTeam {
      */
     public static void main(String[] args) {
         // related to Inventory
+        Player playerOne = new Player();
+        
+        playerOne.setName("Bob Hope");
+        playerOne.setBestTime(5.00);
+        
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
+ 
+        Actor actorOne = new Actor();
+        
+        actorOne.setName("Nephi");
+        actorOne.setDescription("Righteous");
+        
+        String actorInfo = actorOne.toString();
+        System.out.println(actorInfo); 
+        
+        Scene sceneOne = new Scene();
+        
+        sceneOne.setDescription("Jerusalem");
+        sceneOne.setTravelTime(3.0);
+        sceneOne.setBlockedLocation("Blocked");
+        sceneOne.setAvailableLocation("Available");
+        
+        String sceneInfo = sceneOne.toString();
+        System.out.println(sceneInfo);
+        
+        ResourceTypeScene resourceSceneOne = new ResourceTypeScene();
+        
+        resourceSceneOne.setAmountAvailable(50.0);
+        resourceSceneOne.setResourceType("Inheritance");
+        
+        String resourceSceneOneInfo = resourceSceneOne.toString();
+        System.out.println(resourceSceneOneInfo);
+        
+        LocationTypeScene locationSceneOne = new LocationTypeScene();
+        
+        locationSceneOne.setDescription("Lehi's House");
+        
+        String locationSceneInfo = locationSceneOne.toString();
+        System.out.println(locationSceneInfo);
+        
         Inventory inventoryOne = new Inventory();
         
         inventoryOne.setItemType("important");
@@ -46,6 +94,14 @@ public class BrassPlateTeam {
         
         String itemInfo = itemOne.toString();      
         System.out.println(itemInfo);
+        
+        Map mapOne;
+        mapOne = new Map();
+        
+        mapOne.setDirection("Desert");
+        boolean mapInfo = false;
+        System.out.println(mapInfo);
+        
     }
     
 }
