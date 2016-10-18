@@ -15,7 +15,6 @@ import byui.cit260.brassPlatesTeam.model.Player;
 import byui.cit260.brassPlatesTeam.model.Actor;
 import byui.cit260.brassPlatesTeam.model.Map;
 
-
 /**
  *
  * @author JosephKH
