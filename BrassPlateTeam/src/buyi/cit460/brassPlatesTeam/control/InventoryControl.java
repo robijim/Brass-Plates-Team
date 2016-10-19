@@ -51,4 +51,19 @@ public class InventoryControl {
         double treesNeeded = planksNeeded / ((height*12) / 18 *diameter);
         return treesNeeded;
     }
+    
+    public double calcAmountOfGoldAndSilver (double container, double gold, double silver){
+        if(gold < 0 || gold > 40){
+            return -1;
+        }
+        if (silver <0 || silver > 20){
+            return -1;
+        }
+        if (container == 0 || container > 30){
+            return -1;
+        }
+        container = gold + silver;
+        double weight = container * 9.8;
+        return weight;
+    }
 }
