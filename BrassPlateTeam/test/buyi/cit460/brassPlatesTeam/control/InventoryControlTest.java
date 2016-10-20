@@ -104,11 +104,11 @@ public class InventoryControlTest {
         amountContained = 10.0;
         volume = 20.0;
         
-        expResult = -10.0;
+        expResult = 10.0;
         
         result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
         
-        assertEquals(expResult, result, -10.0);
+        assertEquals(expResult, result, 10.0);
         
         /********
          * Test Case #7
@@ -118,11 +118,11 @@ public class InventoryControlTest {
         amountContained = 4500.0;
         volume = 4570.0;
         
-        expResult = -500.0;
+        expResult = 500.0;
         
         result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
         
-        assertEquals(expResult, result, -500.0);
+        assertEquals(expResult, result, 500.0);
         
     }
 
@@ -132,15 +132,12 @@ public class InventoryControlTest {
     @Test
     public void testCalcTreesNeededForContainer() {
         System.out.println("calcTreesNeededForContainer");
-        double containers = 0.0;
-        double height = 0.0;
-        double diameter = 0.0;
+        double height = 16.0;
+        double diameter = 2.0;
         InventoryControl instance = new InventoryControl();
-        double expResult = 0.0;
-        double result = instance.calcTreesNeededForContainer(containers, height, diameter);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double expResult = 90.0;
+        double result = instance.calcTreesNeededForContainer(height, diameter);
+        assertEquals(expResult, result, 90.0);
     }
 
     /**
