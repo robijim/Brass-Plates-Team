@@ -100,16 +100,30 @@ public class InventoryControlTest {
          * Test Case #6
          */
         System.out.println("Test case #6");
-        amountRequired = 10.0;
-        amountContained = 0.0;
-        volume = 0.0;
+        amountRequired = 0.0;
+        amountContained = 10.0;
+        volume = 20.0;
         
-        expResult = 0.0;
+        expResult = -10.0;
         
         result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
         
-        assertEquals(expResult, result, 0.0);
- 
+        assertEquals(expResult, result, -10.0);
+        
+        /********
+         * Test Case #7
+         */
+        System.out.println("Test case #7");
+        amountRequired = 4000.0;
+        amountContained = 4500.0;
+        volume = 4570.0;
+        
+        expResult = -500.0;
+        
+        result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
+        
+        assertEquals(expResult, result, -500.0);
+        
     }
 
     /**
