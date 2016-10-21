@@ -16,6 +16,107 @@ public class InventoryControlTest {
     
     public InventoryControlTest() {
     }
+    
+    /**
+     * Test of calcContainersNeeded method, of class InventoryControl.
+     */
+    @Test
+    public void testCalcVolumeOfContainer() {
+        System.out.println("calcVolumeOfContainer");
+        
+        /********
+         * Test Case #1
+         */
+        System.out.println("\ttest case #1");
+        double height = 10.0;
+        double diameter = 5.0;
+        
+        InventoryControl instance = new InventoryControl();
+        
+        double expResult = 196.25;
+        
+        double result = instance.calcVolumeOfContainer(height, diameter);
+        
+        assertEquals(expResult, result, 0.001);
+        
+        /********
+         * Test Case #2
+         */
+        System.out.println("\ttest case #2");
+        height = -1.0;
+        diameter = 10.0;
+        
+        expResult = -1.0;
+        
+        result = instance.calcVolumeOfContainer(height, diameter);
+        
+        assertEquals(expResult, result, -1.0);
+        
+        /********
+         * Test Case #3
+         */
+        System.out.println("\ttest case #3");
+        height = 1.0;
+        diameter = -10.0;
+        
+        expResult = -1.0;
+        
+        result = instance.calcVolumeOfContainer(height, diameter);
+        
+        assertEquals(expResult, result, -1.0);
+        
+        /********
+         * Test Case #4
+         */
+        System.out.println("\ttest case #4");
+        height = 25.0;
+        diameter = 0.0;
+        
+        expResult = -1.0;
+        
+        result = instance.calcVolumeOfContainer(height, diameter);
+        
+        assertEquals(expResult, result, -1.0);
+        
+        /********
+         * Test Case #5
+         */
+        System.out.println("\ttest case #5");
+        height = 0.0;
+        diameter = 0.0;
+        
+        expResult = 0.0;
+        
+        result = instance.calcVolumeOfContainer(height, diameter);
+        
+        assertEquals(expResult, result, 0.0);
+        
+        /********
+         * Test Case #6
+         */
+        System.out.println("\ttest case #6");
+        height = 1.0;
+        diameter = 0.0;
+        
+        expResult = 10.0;
+        
+        result = instance.calcVolumeOfContainer(height, diameter);
+        
+        assertEquals(expResult, result, 10.0);
+        
+        /********
+         * Test Case #7
+         */
+        System.out.println("\ttest case #7");
+        height = 18.0;
+        diameter = 18.0;
+        
+        expResult = 4578.12;
+        
+        result = instance.calcVolumeOfContainer(height, diameter);
+        
+        assertEquals(expResult, result, 0.001);
+    }
 
     /**
      * Test of calcContainersNeeded method, of class InventoryControl.

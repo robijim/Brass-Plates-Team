@@ -9,8 +9,23 @@ package buyi.cit460.brassPlatesTeam.control;
  *
  * @author camilaortega
  */
+
 public class InventoryControl {
     
+    public double calcVolumeOfContainer(double height, double diameter){
+        if(height < 0 || height >18) {
+            return -1;
+        } 
+        if (diameter < 0 || diameter >18){
+            return -1;
+        }
+        double radius = diameter /2;
+
+        double volume = 3.14 * (radius * radius) *height;
+
+        return volume;
+    }
+
     public double calcContainersNeeded (double amountRequired, double amountContained, double volume){
         if (amountRequired < 0 || amountRequired >4580) {
             return -1;
