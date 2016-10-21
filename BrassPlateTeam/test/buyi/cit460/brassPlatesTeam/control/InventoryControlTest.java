@@ -28,13 +28,13 @@ public class InventoryControlTest {
          * Test Case #1
          */
         System.out.println("Test case #1");
-        double amountRequired = 200.0;
-        double amountContained = 200.0;
-        double volume = 400.0;
+        double amountRequired = 4500.0;
+        double amountContained = 4400.0;
+        double volume = 100.0;
         
         InventoryControl instance = new InventoryControl();
         
-        double expResult = 0.0;
+        double expResult = 100.0;
         
         double result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
         
@@ -100,11 +100,11 @@ public class InventoryControlTest {
          * Test Case #6
          */
         System.out.println("Test case #6");
-        amountRequired = 10.0;
-        amountContained = 0.0;
-        volume = 0.0;
+        amountRequired = 4000.0;
+        amountContained = 3800.0;
+        volume = 200.0;
         
-        expResult = 0.0;
+        expResult = 200.0;
         
         result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
         
@@ -118,15 +118,15 @@ public class InventoryControlTest {
     @Test
     public void testCalcTreesNeededForContainer() {
         System.out.println("calcTreesNeededForContainer");
-        double containers = 0.0;
-        double height = 0.0;
-        double diameter = 0.0;
+        double containers = 196.35;
+        double height = 10.0;
+        double diameter = 5.0;
         InventoryControl instance = new InventoryControl();
-        double expResult = 0.0;
+        double expResult = 180.0;
         double result = instance.calcTreesNeededForContainer(containers, height, diameter);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // TODO review the generated test code and remove the default call to fail.      
+     
     }
 
     /**
@@ -135,15 +135,123 @@ public class InventoryControlTest {
     @Test
     public void testCalcAmountOfGoldAndSilver() {
         System.out.println("calcAmountOfGoldAndSilver");
-        double container = 0.0;
-        double gold = 0.0;
-        double silver = 0.0;
+        double container = 30.0;
+        double gold = 20.0;
+        double silver = 10.0;
         InventoryControl instance = new InventoryControl();
-        double expResult = 0.0;
+        double expResult = 294.0;
         double result = instance.calcAmountOfGoldAndSilver(container, gold, silver);
         assertEquals(expResult, result, 0.0);
+    
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+     
+       /**
+     * Test case #1
+     */
+        
+        System.out.println("Test case #1");
+        container = 30.0;
+        gold = 20.0;
+        silver = 10.0;
+        
+        expResult = 294.0;
+        
+        result = instance.calcAmountOfGoldAndSilver(container, gold, silver);
+        
+        assertEquals(expResult, result, 0.0); 
+        
+         /**
+     * Test case #2
+     */
+        
+        System.out.println("Test case #2");
+        container = 30.0;
+        gold = 20.0;
+        silver = 10.0;
+        
+        expResult = 294.0;
+        
+        result = instance.calcAmountOfGoldAndSilver(container, gold, silver);
+        
+        assertEquals(expResult, result, 0.0); 
+        
+          /**
+     * Test case #3
+     */
+        
+        System.out.println("Test case #3");
+        container = 30.0;
+        gold = 20.0;
+        silver = 10.0;
+        
+        expResult = 294.0;
+        
+        result = instance.calcAmountOfGoldAndSilver(container, gold, silver);
+        
+        assertEquals(expResult, result, 0.0); 
+        
+         /**
+     * Test case #4
+     */
+        
+        System.out.println("Test case #4");
+        container = 30.0;
+        gold = 20.0;
+        silver = 10.0;
+        
+        expResult = 294.0;
+        
+        result = instance.calcAmountOfGoldAndSilver(container, gold, silver);
+        
+        assertEquals(expResult, result, 0.0); 
+        
+          /**
+     * Test case #5
+     */
+        
+        System.out.println("Test case #5");
+        container = 30.0;
+        gold = 20.0;
+        silver = 10.0;
+        
+        expResult = 294.0;
+        
+        result = instance.calcAmountOfGoldAndSilver(container, gold, silver);
+        
+        assertEquals(expResult, result, 0.0); 
+        
+         /**
+     * Test case #6
+     */
+        
+        System.out.println("Test case #6");
+        container = 30.0;
+        gold = 20.0;
+        silver = 10.0;
+        
+        expResult = 294.0;
+        
+        result = instance.calcAmountOfGoldAndSilver(container, gold, silver);
+        
+        assertEquals(expResult, result, 0.0); 
+        
+          /**
+     * Test case #7
+     */
+        
+        System.out.println("Test case #7");
+        container = 30.0;
+        gold = 20.0;
+        silver = 10.0;
+        
+        expResult = 294.0;
+        
+        result = instance.calcAmountOfGoldAndSilver(container, gold, silver);
+        
+        assertEquals(expResult, result, 0.0); 
+        
+        
     }
     
 }
