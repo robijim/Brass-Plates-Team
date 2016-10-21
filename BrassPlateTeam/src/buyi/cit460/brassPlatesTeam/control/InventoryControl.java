@@ -24,11 +24,11 @@ public class InventoryControl {
 	if (amountRequired > volume || volume< amountContained) {
             return -1;
         }
-	double amountNeeded = amountRequired - amountContained;
+	double amountNeeded = amountContained - amountRequired;
 	return amountNeeded; 
     }
         
-    public double calcTreesNeededForContainer (double containers, double height, double diameter){
+    public double calcTreesNeededForContainer (double height, double diameter){
         if(height < 2 || height >16){
             return -1;
         }

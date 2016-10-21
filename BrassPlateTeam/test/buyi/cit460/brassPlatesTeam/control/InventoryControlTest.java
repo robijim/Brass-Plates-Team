@@ -27,14 +27,16 @@ public class InventoryControlTest {
         /********
          * Test Case #1
          */
+
         System.out.println("Test case #1");
-        double amountRequired = 4500.0;
-        double amountContained = 4400.0;
-        double volume = 100.0;
+        double amountRequired = 200.0;
+        double amountContained = 200.0;
+        double volume = 4000.0;
+
         
         InventoryControl instance = new InventoryControl();
         
-        double expResult = 100.0;
+        double expResult = 0.0;
         
         double result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
         
@@ -43,7 +45,7 @@ public class InventoryControlTest {
         /********
          * Test Case #2
          */
-        System.out.println("Test case #2");
+        System.out.println("\ttest case #2");
         amountRequired = -1.0;
         amountContained = 20.0;
         volume = 400.0;
@@ -105,28 +107,93 @@ public class InventoryControlTest {
         volume = 200.0;
         
         expResult = 200.0;
+
+        result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
+        
+        assertEquals(expResult, result, 10.0);
+        
+        /********
+         * Test Case #7
+         */
+        System.out.println("Test case #7");
+        amountRequired = 4000.0;
+        amountContained = 3800.0;
+        volume = 200.0;
+        
+        expResult = 200.0;
         
         result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
         
         assertEquals(expResult, result, 0.0);
- 
+        
     }
 
-    /**
+     /**
      * Test of calcTreesNeededForContainer method, of class InventoryControl.
      */
     @Test
     public void testCalcTreesNeededForContainer() {
         System.out.println("calcTreesNeededForContainer");
-        double containers = 196.35;
-        double height = 10.0;
-        double diameter = 5.0;
+
+        
+        System.out.println("\ttest case 1");
+        double height = 16.0;
+        double diameter = 2.0;
         InventoryControl instance = new InventoryControl();
-        double expResult = 180.0;
-        double result = instance.calcTreesNeededForContainer(containers, height, diameter);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.      
-     
+        double expResult = 90.00000;
+        double result = instance.calcTreesNeededForContainer(height, diameter);
+        assertEquals(expResult, result, 0.00001);
+        
+        System.out.println("\ttest case 2");
+        height = 16.0;
+        diameter = 1.0;
+        expResult = -1.00000;
+        result = instance.calcTreesNeededForContainer(height, diameter);
+        assertEquals(expResult, result, 0.00001);
+        
+        System.out.println("\ttest case 3");
+        height = 10.0;
+        diameter = 7.0;
+        expResult = -1.00000;
+        result = instance.calcTreesNeededForContainer(height, diameter);
+        assertEquals(expResult, result, 0.00001);
+        
+        System.out.println("\ttest case 4");
+        height = 1.0;
+        diameter = 5.0;
+        expResult = -1.00000;
+        result = instance.calcTreesNeededForContainer(height, diameter);
+        assertEquals(expResult, result, 0.00001);
+        
+        System.out.println("\ttest case 5");
+        height = 17.0;
+        diameter = 6.0;
+        expResult = -1.00000;
+        result = instance.calcTreesNeededForContainer(height, diameter);
+        assertEquals(expResult, result, 0.00001);
+        
+        System.out.println("\ttest case 6");
+        height = 2.0;
+        diameter = 6.0;
+        expResult = 270.00000;
+        result = instance.calcTreesNeededForContainer(height, diameter);
+        assertEquals(expResult, result, 0.00001);
+        
+        System.out.println("\ttest case 7");
+        height = 16.0;
+        diameter = 2.0;
+        expResult = 90.00000;
+        result = instance.calcTreesNeededForContainer(height, diameter);
+        assertEquals(expResult, result, 0.00001);
+        
+        System.out.println("\ttest case 8");
+        height = 16.0;
+        diameter = 6.0;
+        expResult = 270.00000;
+        result = instance.calcTreesNeededForContainer(height, diameter);
+        assertEquals(expResult, result, 0.00001);
+        //double treesNeeded = planksNeeded / ((height*12) / 18 *diameter);
+
     }
 
     /**
@@ -146,31 +213,16 @@ public class InventoryControlTest {
         // TODO review the generated test code and remove the default call to fail.
         
      
-       /**
-     * Test case #1
-     */
-        
-        System.out.println("Test case #1");
-        container = 30.0;
-        gold = 20.0;
-        silver = 10.0;
-        
-        expResult = 294.0;
-        
-        result = instance.calcAmountOfGoldAndSilver(container, gold, silver);
-        
-        assertEquals(expResult, result, 0.0); 
-        
          /**
      * Test case #2
      */
         
         System.out.println("Test case #2");
-        container = 30.0;
-        gold = 20.0;
-        silver = 10.0;
+        container = 9.0;
+        gold = -6.0;
+        silver = 15.0;
         
-        expResult = 294.0;
+        expResult = -1.0;
         
         result = instance.calcAmountOfGoldAndSilver(container, gold, silver);
         
@@ -181,11 +233,11 @@ public class InventoryControlTest {
      */
         
         System.out.println("Test case #3");
-        container = 30.0;
-        gold = 20.0;
-        silver = 10.0;
+        container = -9.0;
+        gold = 6.0;
+        silver = -15.0;
         
-        expResult = 294.0;
+        expResult = -1.0;
         
         result = instance.calcAmountOfGoldAndSilver(container, gold, silver);
         
@@ -197,10 +249,10 @@ public class InventoryControlTest {
         
         System.out.println("Test case #4");
         container = 30.0;
-        gold = 20.0;
-        silver = 10.0;
+        gold = 5.0;
+        silver = 25.0;
         
-        expResult = 294.0;
+        expResult = -1.0;
         
         result = instance.calcAmountOfGoldAndSilver(container, gold, silver);
         
@@ -212,8 +264,8 @@ public class InventoryControlTest {
         
         System.out.println("Test case #5");
         container = 30.0;
-        gold = 20.0;
-        silver = 10.0;
+        gold = 10.0;
+        silver = 20.0;
         
         expResult = 294.0;
         
@@ -227,8 +279,8 @@ public class InventoryControlTest {
         
         System.out.println("Test case #6");
         container = 30.0;
-        gold = 20.0;
-        silver = 10.0;
+        gold = 30.0;
+        silver = 0.0;
         
         expResult = 294.0;
         
@@ -242,8 +294,8 @@ public class InventoryControlTest {
         
         System.out.println("Test case #7");
         container = 30.0;
-        gold = 20.0;
-        silver = 10.0;
+        gold = 15.0;
+        silver = 15.0;
         
         expResult = 294.0;
         
