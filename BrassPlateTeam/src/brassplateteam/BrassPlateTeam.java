@@ -5,7 +5,9 @@
  */
 package brassplateteam;
 
-import byui.cit260.brassPlatesTeam.model.Game;
+import citbyui.cit260.brassPlatesTeam.view.StartProgramView;
+
+/*import byui.cit260.brassPlatesTeam.model.Game;
 import byui.cit260.brassPlatesTeam.model.Inventory;
 import byui.cit260.brassPlatesTeam.model.Item;
 import byui.cit260.brassPlatesTeam.model.LocationTypeScene;
@@ -13,7 +15,7 @@ import byui.cit260.brassPlatesTeam.model.ResourceTypeScene;
 import byui.cit260.brassPlatesTeam.model.Scene;
 import byui.cit260.brassPlatesTeam.model.Player;
 import byui.cit260.brassPlatesTeam.model.Actor;
-import byui.cit260.brassPlatesTeam.model.Map;
+import byui.cit260.brassPlatesTeam.model.Map;*/
 
 /**
  *
@@ -25,8 +27,12 @@ public class BrassPlateTeam {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        //Create StartProgramViewOrig and display the start program view
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
         // related to Inventory
-        Player playerOne = new Player();
+        /*Player playerOne = new Player();
         
         playerOne.setName("Bob Hope");
         playerOne.setBestTime(5.00);
@@ -99,7 +105,7 @@ public class BrassPlateTeam {
         
         mapOne.setDirection("Desert");
         boolean mapInfo = false;
-        System.out.println(mapInfo);
+        System.out.println(mapInfo);*/
         
     }
     
