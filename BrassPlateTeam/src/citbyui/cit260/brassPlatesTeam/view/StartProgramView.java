@@ -70,8 +70,21 @@ public class StartProgramView {
     }
 
     private String getPlayersName() {
-        System.out.println("\n*** getPLayersName() called ***");
-        return "Joe";
+      /*getInput(): value
+BEGIN
+ WHILE a valid value has not been entered
+ DISPLAY a message prompting the user to enter a value
+ GET the value entered from keyboard
+ Trim front and trailing blanks off of the value
+ IF the length of the value is blank THEN
+ DISPLAY “Invalid value: The value cannot be blank”
+ CONTINUE
+ ENDIF
+ BREAK
+ ENDWHILE
+ RETURN value
+END */
+      
     }
 
     private boolean doAction(String playersName) {
