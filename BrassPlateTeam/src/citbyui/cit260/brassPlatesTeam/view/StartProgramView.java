@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.brassPlatesTeam.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author jamesrobison
@@ -84,7 +86,24 @@ BEGIN
  ENDWHILE
  RETURN value
 END */
+      Scanner keyboard = new Scanner(System.in); //get infile for keyboard
+      String value = ""; //value to be returned
+      boolean valid = false; //initialize to not valid
       
+      while (!valid) { //loop while an invalid value is entered
+          System.out.println("\n" + this.promptMessage);
+          
+          value = keyboard.nextLine(); //get next line typed on keyboard
+          value = value.trim(); //trim off leading and trailing blanks
+          if (value.length() < 1) { // value is blank
+              System.out.println("\nInvalid value: value can not be blank");
+              continue;
+          }
+          
+          break; //end the loop
+      }
+      
+      return value; //return the value entered
     }
 
     private boolean doAction(String playersName) {
