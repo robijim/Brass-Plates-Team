@@ -5,6 +5,7 @@
  */
 package buyi.cit460.brassPlatesTeam.control;
 
+import brassplateteam.BrassPlateTeam;
 import byui.cit260.brassPlatesTeam.model.Player;
 
 /**
@@ -13,9 +14,15 @@ import byui.cit260.brassPlatesTeam.model.Player;
  */
 public class GameControl {
 
-    public static Player createPlayer(String playersName) {
-        System.out.println("\n*** createPlayer() function called ***");
-        return new Player();
+    public static Player createPlayer(String name) {
+        if (name == null) {
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(name);
+        
+        BrassPlateTeam.setPlayer(player); //save the player
+        return player;
     }
-    
 }
