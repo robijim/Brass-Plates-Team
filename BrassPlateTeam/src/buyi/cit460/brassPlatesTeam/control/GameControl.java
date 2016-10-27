@@ -5,10 +5,17 @@
  */
 package buyi.cit460.brassPlatesTeam.control;
 
+import byui.cit260.brassPlatesTeam.model.Player;
+
 /**
  *
  * @author camilaortega
  */
 public class GameControl {
+
+    public static Player createPlayer(String playersName) {
+        System.out.println("\n*** createPlayer() function called ***");
+        return new Player();
+    }
     
 }

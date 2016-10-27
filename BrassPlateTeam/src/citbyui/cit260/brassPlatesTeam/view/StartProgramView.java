@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.brassPlatesTeam.view;
 
+import buyi.cit460.brassPlatesTeam.control.GameControl;
+import byui.cit260.brassPlatesTeam.model.Player;
 import java.util.Scanner;
 
 /**
@@ -107,7 +109,43 @@ END */
     }
 
     private boolean doAction(String playersName) {
-        System.out.println("\n*** doAction() called ***");
-        return true;
+        
+        /* doAction(playersName): boolean
+        BEGIN
+         if the length of the playersName < 2 then
+         display “Invalid name: The name must be > 1 character”
+         return false
+
+         create Player with specified name
+         if unsuccessful then
+         display “Invalid name: The name is too short”
+         return false
+         display customized welcome message
+         display mainMenuView
+         return true
+        END 
+        */
+        if (playersName.length() < 2) {
+            System.out.println("\nInvalid players name: "
+                    + "The name must be greater than one character in length");
+            return false;
+        }
+        
+        //call createPlayer() control function
+        Player player = GameControl.createPlayer(playersName);
+        
+        if (player == null) { //if unsuccessful
+            System.out.println ("\nError creating the player.");
+            return false;
+        }
+            
+        //display next view
+        this.displayNextView(player);
+        
+        return true; // success!
+    }
+
+    private void displayNextView(Player player) {
+        System.out.println("\n*** displayNextView() called ***");
     }
 }
