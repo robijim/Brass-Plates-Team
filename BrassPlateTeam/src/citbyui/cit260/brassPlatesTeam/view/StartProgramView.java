@@ -146,6 +146,16 @@ END */
     }
 
     private void displayNextView(Player player) {
-        System.out.println("\n*** displayNextView() called ***");
+        // display a custom welcome message
+        System.out.println("\n======================================="
+                          + "\nWelcome aboard, " + player.getName() + "!"
+                          + "\nWe hope you have a lot of fun!"
+                          + "\n=======================================");
+        
+        // create MainMenuView object
+        MainMenuView mainMenuView = new MainMenuView();
+        
+        // display the main menu view
+        mainMenuView.displayMainMenuView();
     }
 }
