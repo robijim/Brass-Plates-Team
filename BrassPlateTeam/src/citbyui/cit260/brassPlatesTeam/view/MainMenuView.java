@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.brassPlatesTeam.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author camilaortega
@@ -42,8 +44,38 @@ public class MainMenuView {
     }
 
     private String getMenuOption() {
-        System.out.println("\n*** getMenuOption() function called ***");
-        return "N";
+      /*getInput(): value
+BEGIN
+ WHILE a valid value has not been entered
+ DISPLAY a message prompting the user to enter a value
+ GET the value entered from keyboard
+ Trim front and trailing blanks off of the value
+ IF the length of the value is blank THEN
+ DISPLAY “Invalid value: The value cannot be blank”
+ CONTINUE
+ ENDIF
+ BREAK
+ ENDWHILE
+ RETURN value
+END  */
+      Scanner keyboard = new Scanner(System.in); //get infile for keyboard
+      String value = ""; //value to be returned
+      boolean valid = false; //initialize to not valid
+      
+      while (!valid) { //loop while an invalid value is entered
+          System.out.println("\n" + this.menu);
+          
+          value = keyboard.nextLine(); //get next line typed on keyboard
+          value = value.trim(); //trim off leading and trailing blanks
+          if (value.length() < 1) { // value is blank
+              System.out.println("\nInvalid value: value can not be blank");
+              continue;
+          }
+          
+          break; //end the loop
+      }
+      
+      return value; //return the value entered
     }
 
     private boolean doAction(String menuOption) {
