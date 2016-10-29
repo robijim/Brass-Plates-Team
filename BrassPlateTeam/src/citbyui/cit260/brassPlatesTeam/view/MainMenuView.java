@@ -12,7 +12,7 @@ package citbyui.cit260.brassPlatesTeam.view;
 class MainMenuView {
 
     void displayMainMenuView() {
-        System.out.println("\n*** displayMenu() function called ***");
+        System.out.println("\n*** displayMenuView() function called ***");
     }
     
 }
