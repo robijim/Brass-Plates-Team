@@ -16,5 +16,9 @@ class GameControl {
     static void createNewGame(Player player) {
         System.out.println("\n*** createNewGame function called ***");
     }
+
+    static void displayHelpMenuView() {
+        System.out.println("\n*** displayHelpMenuView function called ***");
+    }
     
 }

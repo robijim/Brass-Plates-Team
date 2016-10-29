@@ -4,47 +4,45 @@
  * and open the template in the editor.
  */
 package citbyui.cit260.brassPlatesTeam.view;
-
-import brassplateteam.BrassPlateTeam;
 import java.util.Scanner;
 
 /**
  *
  * @author camilaortega
  */
-public class MainMenuView {
+public class HelpMenuView {
     private String menu;
     
-    public MainMenuView(){
+    public HelpMenuView(){
         this.menu = "\n"
                     + "\n-------------------------------"
-                    + "\n| Main Menu                   |"
+                    + "\n| Help Menu                   |"
                     + "\n-------------------------------"
-                    + "\nN- Start a new game           |"
-                    + "\nC- Continue saved game        |"
-                    + "\nS- Save game                  |"
+                    + "\nH- How to play                |"
+                    + "\nT- Traveling through the game |"
+                    + "\nK- Know the goal of the quest |"
                     + "\nQ- Quit                       |"
                     + "\n-------------------------------";
     }
     /**
-     * display the start program view
+     * display the help menu view
      */
-    public void displayMainMenuView(){
+    public void displayHelpMenuView(){
         boolean done = false; //set flag to not done
         
         do{
-            //prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) //user wants to exit
+            //prompt for and get help menu option
+            String helpMenuOption = this.getHelpMenuOption();
+            if (helpMenuOption.toUpperCase().equals("Q")) //user wants to exit
                 return; //exit game
             
             //do the requested action and display the next view
-            done = this.doAction(menuOption);
+            done = this.doAction(helpMenuOption);
             
         } while (!done);
     }
 
-    private String getMenuOption() {
+    private String getHelpMenuOption() {
       /*getInput(): value
 BEGIN
  WHILE a valid value has not been entered
@@ -83,10 +81,9 @@ END  */
         /*BEGIN
         convert choice to upper case
         SWITCH choice
-                         “N”: Start a new game
-                         “G”: Get and start a saved game
-                         “H”: Display the help menu
-                         “S”: Display the save game view
+                         “H”: How to play
+                         “T”: Traveling through the game
+                         “K”: Know the goal of the quest
                          DEFAULT: DISPLAY “Invalid selection”
         ENDSWITCH
         RETURN false
@@ -94,18 +91,15 @@ END  */
         choice = choice.toUpperCase(); //convert choice to upper case
         
         switch (choice) {
-            case "N": //create and start a new game
-                this.startNewGame();
+            case "H": //show how to play
+                this.howToPlay();
                 break;
-            case "C": //get and start an existing game
-               this.startExistingGame();
+            case "T": //guidelines for how to travel through the game
+               this.travelingGame();
                break;
-            case "H": //display the help menu
-             this.displayHelpMenu();
+            case "K": //know the goal of the quest
+             this.knowQuest();
              break;
-            case "S": //save the current game
-               this.saveGame();
-               break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -113,29 +107,15 @@ END  */
         return false;
     }
 
-    private void startNewGame() {
-            //creta e new game
-        GameControl.createNewGame(BrassPlateTeam.getPlayer());
-        
-        //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+    private void howToPlay() {
+        System.out.println("\n*** howToPlay function called ***");
     }
 
-    private void startExistingGame() {
-        System.out.println("\n*** startExistingGame function called ***");
+    private void travelingGame() {
+        System.out.println("\n*** travelingGame function called ***");
     }
 
-    private void displayHelpMenu() {
-        //creta e new game
-        GameControl.displayHelpMenuView();
-        
-        //display the game menu
-        HelpMenuView gameMenu = new HelpMenuView();
-        gameMenu.displayHelpMenuView();
-    }
-
-    private void saveGame() {
-        System.out.println("\n*** saveGame function called ***");
+    private void knowQuest() {
+        System.out.println("\n*** knowQuest function called ***");
     }
 }
