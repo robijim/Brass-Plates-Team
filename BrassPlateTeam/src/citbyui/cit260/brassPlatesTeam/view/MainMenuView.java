@@ -5,6 +5,7 @@
  */
 package citbyui.cit260.brassPlatesTeam.view;
 
+import brassplateteam.BrassPlateTeam;
 import java.util.Scanner;
 
 /**
@@ -78,8 +79,58 @@ END  */
       return value; //return the value entered
     }
 
-    private boolean doAction(String menuOption) {
-        System.out.println("\n*** doAction() function called ***");
-        return true;
+    private boolean doAction(String choice) {
+        /*BEGIN
+        convert choice to upper case
+        SWITCH choice
+                         “N”: Start a new game
+                         “G”: Get and start a saved game
+                         “H”: Display the help menu
+                         “S”: Display the save game view
+                         DEFAULT: DISPLAY “Invalid selection”
+        ENDSWITCH
+        RETURN false
+        END*/
+        choice = choice.toUpperCase(); //convert choice to upper case
+        
+        switch (choice) {
+            case "N": //create and start a new game
+                this.startNewGame();
+                break;
+            case "C": //get and start an existing game
+               this.startExistingGame();
+               break;
+            case "H": //display the help menu
+             this.displayHelpMenu();
+             break;
+            case "S": //save the current game
+               this.saveGame();
+               break;
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        }
+        return false;
+    }
+
+    private void startNewGame() {
+            //creta e new game
+        GameControl.createNewGame(BrassPlateTeam.getPlayer());
+        
+        //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
+    }
+
+    private void startExistingGame() {
+        System.out.println("\n*** startExistingGame function called ***");
+    }
+
+    private void displayHelpMenu() {
+        System.out.println("\n*** displayHelpMenu function called ***");
+    }
+
+    private void saveGame() {
+        System.out.println("\n*** saveGame function called ***");
     }
 }
