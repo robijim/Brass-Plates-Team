@@ -151,11 +151,11 @@ public class InventoryControlTest {
         amountContained = 20.0;
         volume = 400.0;
         
-        expResult = -1.0;
+        expResult = -1;
         
         result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
         
-        assertEquals(expResult, result, -1.0);
+        assertEquals(expResult, result, -1);
         
         /********
          * Test Case #3
@@ -165,11 +165,11 @@ public class InventoryControlTest {
         amountContained = -1.0;
         volume = 4000.0;
         
-        expResult = -1.0;
+        expResult = -1;
         
         result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
         
-        assertEquals(expResult, result, -1.0);
+        assertEquals(expResult, result, -1);
         
         /********
          * Test Case #4
@@ -179,11 +179,11 @@ public class InventoryControlTest {
         amountContained = 2000.0;
         volume = 4000.0;
         
-        expResult = -1.0;
+        expResult = -1;
         
         result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
         
-        assertEquals(expResult, result, -1.0);
+        assertEquals(expResult, result, -1);
         
         /********
          * Test Case #5
@@ -203,29 +203,29 @@ public class InventoryControlTest {
          * Test Case #6
          */
         System.out.println("Test case #6");
-        amountRequired = 4000.0;
-        amountContained = 3800.0;
-        volume = 200.0;
+        amountRequired = 3800.0;
+        amountContained = 4000.0;
+        volume = 4000.0;
         
         expResult = 200.0;
 
         result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
         
-        assertEquals(expResult, result, 10.0);
+        assertEquals(expResult, result, 200.0);
         
         /********
          * Test Case #7
          */
         System.out.println("Test case #7");
-        amountRequired = 4000.0;
+        amountRequired = 3700.0;
         amountContained = 3800.0;
-        volume = 200.0;
+        volume = 4000.0;
         
-        expResult = 200.0;
+        expResult = 300.0;
         
         result = instance.calcContainersNeeded(amountRequired, amountContained, volume);
         
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 300.0);
         
     }
 
