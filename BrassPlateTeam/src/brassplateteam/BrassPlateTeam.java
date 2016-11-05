@@ -35,7 +35,7 @@ public class BrassPlateTeam {
         
         //Create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();   
+        startProgramView.displayStartProgramView(); 
     }
 
     public static Game getCurrentGame() {
@@ -53,5 +53,5 @@ public class BrassPlateTeam {
     public static void setPlayer(Player player) {
         BrassPlateTeam.player = player;
     }
-    
+  
 }
