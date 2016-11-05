@@ -23,6 +23,8 @@ public class MainMenuView {
                     + "\nN- Start a new game           |"
                     + "\nC- Continue saved game        |"
                     + "\nS- Save game                  |"
+                    + "\nL- Location                   |"
+                    + "\nH- Help                       |"
                     + "\nQ- Quit                       |"
                     + "\n-------------------------------";
     }
@@ -103,6 +105,9 @@ END  */
             case "H": //display the help menu
              this.displayHelpMenu();
              break;
+            case "L": //display the help menu
+             this.displayLocationMenu();
+             break;
             case "S": //save the current game
                this.saveGame();
                break;
@@ -115,11 +120,7 @@ END  */
 
     private void startNewGame() {
             //creta e new game
-        GameControl.createNewGame(BrassPlateTeam.getPlayer());
-        
-        //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        System.out.println("\n*** howToPlay function called ***");
     }
 
     private void startExistingGame() {
@@ -137,5 +138,12 @@ END  */
 
     private void saveGame() {
         System.out.println("\n*** saveGame function called ***");
+    }
+
+    private void displayLocationMenu() {
+        GameControl.displayLocationMenuView();
+        
+        LocationMenuView gameMenu = new LocationMenuView();
+        gameMenu.displayLocationMenuView();
     }
 }

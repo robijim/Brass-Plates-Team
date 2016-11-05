@@ -20,5 +20,9 @@ class GameControl {
     static void displayHelpMenuView() {
         System.out.println("\n*** displayHelpMenuView function called ***");
     }
+
+    static void displayLocationMenuView() {
+        System.out.println("\n*** displayLocationMenuView function called ***");
+    }
     
 }
