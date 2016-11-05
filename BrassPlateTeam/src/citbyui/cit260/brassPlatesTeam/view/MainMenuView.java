@@ -24,6 +24,7 @@ public class MainMenuView {
                     + "\nC- Continue saved game        |"
                     + "\nS- Save game                  |"
                     + "\nL- Location                   |"
+                    + "\nR- Roll dice                   |"
                     + "\nH- Help                       |"
                     + "\nQ- Quit                       |"
                     + "\n-------------------------------";
@@ -108,6 +109,9 @@ END  */
             case "L": //display the help menu
              this.displayLocationMenu();
              break;
+            case "R": //display the help menu
+             this.displayCastLotsView();
+             break;
             case "S": //save the current game
                this.saveGame();
                break;
@@ -145,5 +149,11 @@ END  */
         
         LocationMenuView gameMenu = new LocationMenuView();
         gameMenu.displayLocationMenuView();
+    }
+    private void displayCastLotsView() {
+        GameControl.displayCastLotsView();
+        
+        CastLotsView castLotsMenu = new CastLotsView();
+        castLotsMenu.displayCastLotsView();
     }
 }

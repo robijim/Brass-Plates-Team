@@ -24,5 +24,9 @@ class GameControl {
     static void displayLocationMenuView() {
         System.out.println("\n*** displayLocationMenuView function called ***");
     }
+
+    static void displayCastLotsView() {
+        System.out.println("\n***displayCastLotsMenuView function called***");
+    }
     
 }
