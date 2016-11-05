@@ -20,7 +20,7 @@ public class CastLotsView {
                    +"\nCast Lots Menu                 "
                    +"\n-------------------------------"
                    +"\nR- Roll Dice                   "
-                   +"\nE- Exit and continue quest     "
+                   +"\nE- Exit to Main Menu           "
                    +"\n-------------------------------";
     }
     
