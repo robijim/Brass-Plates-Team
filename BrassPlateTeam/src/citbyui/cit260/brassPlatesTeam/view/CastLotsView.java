@@ -11,72 +11,21 @@ import java.util.Scanner;
  *
  * @author jamesrobison
  */
-public class CastLotsView {
+public class CastLotsView extends View {
 
     //Display a menu with options used to cast lots or in other words roll the dice.  There are 4 numbers corresponding each corresponding to the characters.  Laman is eldest or #1, Lemuel is #2, Sam is #3, and Nephi is #4.
-    private String menu;
     public CastLotsView() {
-        this.menu = "\n-------------------------------"
+         super("\n-------------------------------"
                    +"\nCast Lots Menu                 "
                    +"\n-------------------------------"
                    +"\nR- Roll Dice                   "
                    +"\nE- Exit to Main Menu           "
-                   +"\n-------------------------------";
-    }
-    
-    public void displayCastLotsView(){
-        boolean done = false; //set flag to not done
-        
-        do{
-            //prompt for and get players name
-            String CastLotsOption = this.getCastLotsOption();
-            if (CastLotsOption.toUpperCase().equals("E")) //user wants to return to continue quest
-                return; //exit Cast Lots View
-            
-            //do the requested action and display the next view
-            done = this.doAction(CastLotsOption);
-            
-        } while (!done);
+                   +"\n-------------------------------");
     }
 
     //Each time a number is picked a dialogue will be created either prompting the player to roll the dice again or will give an account of the success of the failure of the person who just attempted the desired quest.     //When the players number is called, the view will display a message to the user that it is the player's turn to complete the quest.
-
-    private String getCastLotsOption() {
-      /*getInput(): value
-BEGIN
- WHILE a valid value has not been entered
- DISPLAY a message prompting the user to enter a value
- GET the value entered from keyboard
- Trim front and trailing blanks off of the value
- IF the length of the value is blank THEN
- DISPLAY “Invalid value: The value cannot be blank”
- CONTINUE
- ENDIF
- BREAK
- ENDWHILE
- RETURN value
-END  */
-      Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-      String value = ""; //value to be returned
-      boolean valid = false; //initialize to not valid
-      
-      while (!valid) { //loop while an invalid value is entered
-          System.out.println("\n" + this.menu);
-          
-          value = keyboard.nextLine(); //get next line typed on keyboard
-          value = value.trim(); //trim off leading and trailing blanks
-          if (value.length() < 1) { // value is blank
-              System.out.println("\nInvalid value: value can not be blank");
-              continue;
-          }
-          
-          break; //end the loop
-      }
-      
-      return value; //return the value entered
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String value) {
         /*BEGIN
         convert choice to upper case
         SWITCH choice
@@ -86,8 +35,8 @@ END  */
         ENDSWITCH
         RETURN false
         END*/
-        choice = choice.toUpperCase(); //convert choice to upper case
-        switch (choice) {
+        value = value.toUpperCase(); //convert choice to upper case
+        switch (value) {
             case "R": //roll dice
                 this.rollDice();
                 break;

@@ -102,6 +102,6 @@ public class MainMenuView extends View {
         GameControl.displayCastLotsView();
         
         CastLotsView castLotsMenu = new CastLotsView();
-        castLotsMenu.displayCastLotsView();
+        castLotsMenu.display();
     }
 }
