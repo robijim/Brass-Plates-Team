@@ -96,7 +96,7 @@ public class MainMenuView extends View {
         GameControl.displayLocationMenuView();
         
         LocationMenuView gameMenu = new LocationMenuView();
-        gameMenu.displayLocationMenuView();
+        gameMenu.display();
     }
     private void displayCastLotsView() {
         GameControl.displayCastLotsView();
