@@ -19,7 +19,7 @@ public class CastLotsView extends View {
                    +"\nCast Lots Menu                 "
                    +"\n-------------------------------"
                    +"\nR- Roll Dice                   "
-                   +"\nE- Exit to Main Menu           "
+                   +"\nQ- Exit to Main Menu           "
                    +"\n-------------------------------");
     }
 
@@ -30,7 +30,7 @@ public class CastLotsView extends View {
         convert choice to upper case
         SWITCH choice
                          “R”: Roll dice
-                         “E”: Return to Main Menu
+                         “Q”: Return to Main Menu
                          DEFAULT: DISPLAY “Invalid selection”
         ENDSWITCH
         RETURN false
@@ -40,7 +40,7 @@ public class CastLotsView extends View {
             case "R": //roll dice
                 this.rollDice();
                 break;
-            case "E": //get and start an existing game
+            case "Q": //get and start an existing game
                this.returnToMainMenu();
                break;
             default:
