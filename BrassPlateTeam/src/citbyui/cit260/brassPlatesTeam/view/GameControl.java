@@ -32,5 +32,9 @@ class GameControl {
     static void displayGameView() {
         System.out.println("\n***displayGameView function called***");
     }
+
+    static void displayLabansHouseMenuView() {
+        System.out.println("\n***displayLabansHouseMenuView function called***");
+    }
     
 }
