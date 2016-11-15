@@ -23,7 +23,9 @@ public class MainMenuView extends View {
             + "\nC- Continue saved game        |"
             + "\nS- Save game                  |"
             + "\nL- Location                   |"
-            + "\nR- Roll dice                   |"
+            + "\nZ- Laban's House              |"               
+            + "\nR- Roll dice                  |"
+            + "\nG- Game menu                  |"
             + "\nH- Help                       |"
             + "\nQ- Quit                       |"
             + "\n-------------------------------");
@@ -54,12 +56,18 @@ public class MainMenuView extends View {
             case "H": //display the help menu
              this.displayHelpMenu();
              break;
-            case "L": //display the help menu
+            case "L": //display the location menu
              this.displayLocationMenu();
+             break;
+            case "Z": //display Laban's house menu
+             this.displayLabansHouseMenu();
              break;
             case "R": //display the help menu
              this.displayCastLotsView();
              break;
+            case "G": //save the current game
+               this.displayGameView();
+               break;
             case "S": //save the current game
                this.saveGame();
                break;
@@ -104,4 +112,19 @@ public class MainMenuView extends View {
         CastLotsView castLotsMenu = new CastLotsView();
         castLotsMenu.display();
     }
+    
+    private void displayGameView() {
+        GameControl.displayGameView();
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+    }
+
+    private void displayLabansHouseMenu() {
+        GameControl.displayLabansHouseMenuView();
+        
+        LabansHouseMenuView labansHouse = new LabansHouseMenuView();
+        labansHouse.display();
+    }
+    
 }

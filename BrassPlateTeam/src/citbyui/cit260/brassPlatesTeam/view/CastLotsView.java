@@ -15,7 +15,7 @@ public class CastLotsView extends View {
 
     //Display a menu with options used to cast lots or in other words roll the dice.  There are 4 numbers corresponding each corresponding to the characters.  Laman is eldest or #1, Lemuel is #2, Sam is #3, and Nephi is #4.
     public CastLotsView() {
-         super("\n-------------------------------"
+              super("\n-------------------------------"
                    +"\nCast Lots Menu                 "
                    +"\n-------------------------------"
                    +"\nR- Roll Dice                   "
