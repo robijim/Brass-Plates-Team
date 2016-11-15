@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.brassPlatesTeam.view;
 
+import byui.cit260.brassPlatesTeam.model.Player;
+
 /**
  *
  * @author camilaortega
@@ -13,6 +15,5 @@ class GameMenuView {
 
     void displayMenu() {
         System.out.println("\n*** displayMenu function called ***");
-    }
-    
+    }   
 }

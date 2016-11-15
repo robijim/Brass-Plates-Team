@@ -26,7 +26,10 @@ class GameControl {
     }
 
     static void displayCastLotsView() {
-        System.out.println("\n***displayCastLotsMenuView function called***");
+        System.out.println("\n***displayCastLotsMenuView function called***");   
     }
     
+     static void displayObtainThePlatesView() {
+        System.out.println("\n***displayObtainThePlatesView function called***");   
+    }
 }
