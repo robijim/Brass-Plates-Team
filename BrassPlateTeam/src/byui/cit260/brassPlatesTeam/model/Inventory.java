@@ -18,7 +18,10 @@ public class Inventory implements Serializable {
     private String itemType;
     private double amountCollected;
     private double amountNeeded;
-
+    
+    private Actor actor;
+    private Item[] item;
+    
     public Inventory() {
     }
     
@@ -85,7 +88,21 @@ public class Inventory implements Serializable {
     public String toString() {
         return "Inventory{" + "itemType=" + itemType + ", amountCollected=" + amountCollected + ", amountNeeded=" + amountNeeded + '}';
     }
-    
-    
+
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+
+    public Item[] getItem() {
+        return item;
+    }
+
+    public void setItem(Item[] item) {
+        this.item = item;
+    }
     
 }

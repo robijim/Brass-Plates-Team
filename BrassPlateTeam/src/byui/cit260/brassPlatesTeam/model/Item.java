@@ -16,6 +16,9 @@ public class Item implements Serializable{
     
     //class instance variable
     private String name;
+    
+    private Inventory inventory;
+    private Game game;
 
     public Item() {
     }
@@ -62,6 +65,19 @@ public class Item implements Serializable{
         return "Item{" + "item=" + name + '}';
     }
 
-    
-    
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
 }

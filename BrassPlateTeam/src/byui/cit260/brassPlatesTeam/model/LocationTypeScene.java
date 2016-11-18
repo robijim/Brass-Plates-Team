@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class LocationTypeScene extends Scene implements Serializable{
     private String description;
-
+    
     public LocationTypeScene() {
     }
 
@@ -56,6 +56,5 @@ public class LocationTypeScene extends Scene implements Serializable{
     public String toString() {
         return "LocationTypeScene{" + "description=" + description + '}';
     }
-    
     
 }

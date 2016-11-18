@@ -16,7 +16,12 @@ public class Game implements Serializable{
     
     //class instance variables
     private double totalTime;
-
+    
+    private Map map;
+    private Player player;
+    private Actor[] actor;
+    private Item[] item;
+    
     public Game() {
     }
     
@@ -59,6 +64,37 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + '}';
     }
- 
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Actor[] getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor[] actor) {
+        this.actor = actor;
+    }
+
+    public Item[] getItem() {
+        return item;
+    }
+
+    public void setItem(Item[] item) {
+        this.item = item;
+    }
     
 }

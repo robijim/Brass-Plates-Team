@@ -18,6 +18,8 @@ public class Map implements Serializable{
     private double rowCount;
     private String columnCount;
 
+    private Game[] game;
+    
     public Map() {
     }
     
@@ -49,5 +51,13 @@ public class Map implements Serializable{
     @Override
     public String toString() {
         return "map=" + direction + "Map{" + '}';
+    }
+
+    public Game[] getGame() {
+        return game;
+    }
+
+    public void setGame(Game[] game) {
+        this.game = game;
     }
 }
