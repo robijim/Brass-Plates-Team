@@ -37,7 +37,7 @@ public class Item implements Serializable{
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 17 * hash + Objects.hashCode(this.name);
+        hash = 17 * hash + Objects.hashCode(this.description);
         return hash;
     }
 
@@ -53,7 +53,7 @@ public class Item implements Serializable{
             return false;
         }
         final Item other = (Item) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         return true;
@@ -62,7 +62,7 @@ public class Item implements Serializable{
 
     @Override
     public String toString() {
-        return "Item{" + "item=" + name + '}';
+        return "Item{" + "item=" + description + '}';
     }
 
     public Inventory getInventory() {
