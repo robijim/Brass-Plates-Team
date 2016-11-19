@@ -79,8 +79,12 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
-            //creta e new game
-        System.out.println("\n*** startNewGame function called ***");
+        // create a new game
+        GameControl.createNewGame(BrassPlateTeam.getPlayer());
+        
+        //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void startExistingGame() {

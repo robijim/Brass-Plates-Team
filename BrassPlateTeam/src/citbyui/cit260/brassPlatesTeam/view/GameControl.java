@@ -5,16 +5,37 @@
  */
 package citbyui.cit260.brassPlatesTeam.view;
 
+import brassplateteam.BrassPlateTeam;
+import buyi.cit460.brassPlatesTeam.control.MapControl;
+import byui.cit260.brassPlatesTeam.model.BrassPlates;
+import byui.cit260.brassPlatesTeam.model.Game;
+import byui.cit260.brassPlatesTeam.model.Item;
+import byui.cit260.brassPlatesTeam.model.Map;
 import byui.cit260.brassPlatesTeam.model.Player;
 
 /**
  *
  * @author camilaortega
  */
-class GameControl {
-
-    static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame function called ***");
+public class GameControl {
+    public static void createNewGame(Player player) {
+        Game game = new Game(); // create new game
+        BrassPlateTeam.setCurrentGame(game); //save in BrassPlate
+        
+        game.setPlayer(player); //save player in game
+        
+        //create the inventory and save in the game
+        Item[] item = GameControl.createInventoryList();
+        game.setItem(item);
+        
+        Map map = MapControl.createMap(); // create new map
+        game.setMap(map); //save map
+        
+        BrassPlates brassplates= new BrassPlates();//create new Brass Plate
+        game.setBrassplates(brassplates); //save in game
+        
+        // move actors to starting position in the map
+        MapControl.moveActorsToStartingLocation(map);
     }
 
     static void displayHelpMenuView() {
@@ -37,7 +58,39 @@ class GameControl {
         System.out.println("\n***displayLabansHouseMenuView function called***");
     }
 
-     static void displayObtainThePlatesView() {
+    static void displayObtainThePlatesView() {
         System.out.println("\n***displayObtainThePlatesView function called***");   
+    }
+     
+    public static Item[] createInventoryList() {
+        
+        Item[] item = 
+            new Item[4];
+        
+        Item plank = new Item();
+        plank.setDescription("plank");
+        plank.setQuantityInStock(0);
+        plank.setRequiredAmount(0);
+        item[0] = plank;
+        
+        Item gold = new Item();
+        gold.setDescription("gold");
+        gold.setQuantityInStock(0);
+        gold.setRequiredAmount(0);
+        item[1] = gold;
+        
+        Item silver = new Item();
+        silver.setDescription("silver");
+        silver.setQuantityInStock(0);
+        silver.setRequiredAmount(0);
+        item[2] = silver;
+        
+        Item container = new Item();
+        container.setDescription("container");
+        container.setQuantityInStock(0);
+        container.setRequiredAmount(0);
+        item[3] = container;
+        
+        return item;
     }
 }

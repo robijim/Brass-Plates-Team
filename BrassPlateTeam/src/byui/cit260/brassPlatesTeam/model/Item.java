@@ -20,11 +20,9 @@ public class Item implements Serializable{
     private Inventory inventory;
     private Game game;
     private Location location;
-
+   
     public Item() {
     }
-    
-    
 
     public String getName() {
         return name;
@@ -72,6 +70,7 @@ public class Item implements Serializable{
 
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
+        
     }
 
     public Game getGame() {
