@@ -17,11 +17,29 @@ public class Map implements Serializable{
     private String direction;
     private double rowCount;
     private String columnCount;
-    private Location[][] location;
+    private Location[][] locations;
 
     private Game[] game;
+    private int nRows;
+    private int nColumns;
     
-    public Map(int i, int i0) {
+    public Map(int nRows, int nColumns) {
+        if(nRows<1 || nColumns<1) {
+            System.out.println("The number of rows and columns must be greater than 0.");
+            return;
+        }
+        this.nRows = nRows;
+        this.nColumns = nColumns;
+        this.locations = new Location[nRows] [nColumns];
+        for (int row = 0; row<nRows; row++) {
+            for (int column = 0; column<nColumns; column++) {
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                locations[row][column] = location;
+            }
+        }
     }
     
 
@@ -63,11 +81,11 @@ public class Map implements Serializable{
     }
 
     public Location[][] getLocation() {
-        return location;
+        return locations;
     }
 
     public void setLocation(Location[][] location) {
-        this.location = location;
+        this.locations = location;
     }
     
 }

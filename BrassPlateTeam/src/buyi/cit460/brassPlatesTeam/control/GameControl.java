@@ -31,4 +31,8 @@ public class GameControl {
     static void assignScenesToLocations(Map map, Scene scene) {
         System.out.println("\n***called assignScenesToLocations() in MapControl***");
     }
+
+    static void assignScenesToLocations(Map map, Scene[] scene) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
