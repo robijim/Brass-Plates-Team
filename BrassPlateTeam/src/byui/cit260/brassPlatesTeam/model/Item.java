@@ -19,6 +19,7 @@ public class Item implements Serializable{
     
     private Inventory inventory;
     private Game game;
+    private Location location;
 
     public Item() {
     }
@@ -80,4 +81,13 @@ public class Item implements Serializable{
     public void setGame(Game game) {
         this.game = game;
     }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+    
 }

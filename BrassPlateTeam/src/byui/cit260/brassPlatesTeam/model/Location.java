@@ -19,7 +19,8 @@ public class Location implements Serializable{
     private boolean visited;
     private double amountRemaining;
     private String name;
-
+    private Item[] item;
+    
     public Location() {
     }
     
@@ -64,6 +65,16 @@ public class Location implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
+
+    public Item[] getItem() {
+        return item;
+    }
+
+    public void setItem(Item[] item) {
+        this.item = item;
+    }
+    
+    
 
     @Override
     public int hashCode() {

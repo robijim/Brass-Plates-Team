@@ -21,6 +21,7 @@ public class Game implements Serializable{
     private Player player;
     private Actor[] actor;
     private Item[] item;
+    private BrassPlates brassplates;
     
     public Game() {
     }
@@ -95,6 +96,14 @@ public class Game implements Serializable{
 
     public void setItem(Item[] item) {
         this.item = item;
+    }
+
+    public BrassPlates getBrassplates() {
+        return brassplates;
+    }
+
+    public void setBrassplates(BrassPlates brassplates) {
+        this.brassplates = brassplates;
     }
     
 }
