@@ -61,6 +61,13 @@ public class GameControl {
     static void displayObtainThePlatesView() {
         System.out.println("\n***displayObtainThePlatesView function called***");   
     }
+    
+    public enum Index {
+        plank,
+        gold,
+        silver,
+        container;
+    }
      
     public static Item[] createInventoryList() {
         
@@ -71,25 +78,25 @@ public class GameControl {
         plank.setDescription("plank");
         plank.setQuantityInStock(0);
         plank.setRequiredAmount(0);
-        item[0] = plank;
+        item[Index.plank.ordinal()] = plank;
         
         Item gold = new Item();
         gold.setDescription("gold");
         gold.setQuantityInStock(0);
         gold.setRequiredAmount(0);
-        item[1] = gold;
+        item[Index.gold.ordinal()] = gold;
         
         Item silver = new Item();
         silver.setDescription("silver");
         silver.setQuantityInStock(0);
         silver.setRequiredAmount(0);
-        item[2] = silver;
+        item[Index.silver.ordinal()] = silver;
         
         Item container = new Item();
         container.setDescription("container");
         container.setQuantityInStock(0);
         container.setRequiredAmount(0);
-        item[3] = container;
+        item[Index.container.ordinal()] = container;
         
         return item;
     }

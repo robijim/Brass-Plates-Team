@@ -15,21 +15,22 @@ import java.util.Objects;
 public class Item implements Serializable{
     
     //class instance variable
-    private String name;
+    private String description;
     
     private Inventory inventory;
     private Game game;
     private Location location;
+    
    
     public Item() {
     }
 
-    public String getName() {
-        return name;
+    public String getDescription() {
+        return description;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDescription(String description) {
+        this.description = description;
         
     }
 
@@ -87,6 +88,14 @@ public class Item implements Serializable{
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public void setQuantityInStock(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setRequiredAmount(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
