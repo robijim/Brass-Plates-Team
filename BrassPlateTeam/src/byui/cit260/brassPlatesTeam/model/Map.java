@@ -17,10 +17,11 @@ public class Map implements Serializable{
     private String direction;
     private double rowCount;
     private String columnCount;
+    private Location[][] location;
 
     private Game[] game;
     
-    public Map() {
+    public Map(int i, int i0) {
     }
     
 
@@ -60,4 +61,13 @@ public class Map implements Serializable{
     public void setGame(Game[] game) {
         this.game = game;
     }
+
+    public Location[][] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[][] location) {
+        this.location = location;
+    }
+    
 }

@@ -6,7 +6,9 @@
 package buyi.cit460.brassPlatesTeam.control;
 
 import brassplateteam.BrassPlateTeam;
+import byui.cit260.brassPlatesTeam.model.Map;
 import byui.cit260.brassPlatesTeam.model.Player;
+import byui.cit260.brassPlatesTeam.model.Scene;
 
 /**
  *
@@ -24,5 +26,9 @@ public class GameControl {
         
         BrassPlateTeam.setPlayer(player); //save the player
         return player;
+    }
+
+    static void assignScenesToLocations(Map map, Scene scene) {
+        System.out.println("\n***called assignScenesToLocations() in MapControl***");
     }
 }

@@ -6,6 +6,7 @@
 package buyi.cit460.brassPlatesTeam.control;
 
 import byui.cit260.brassPlatesTeam.model.Map;
+import byui.cit260.brassPlatesTeam.model.Scene;
 
 /**
  *
@@ -18,9 +19,22 @@ public class MapControl {
     }
 
     public static Map createMap() {
-        Map map = null;
-        System.out.println("\n***called createMap()***");   
+        
+        //create a new map
+        Map map = new Map(20, 20);
+        
+        //create scene
+        Scene scene = createScenes();
+        
+        //assign scenes to locations
+        GameControl.assignScenesToLocations(map, scene);
+        
         return map;
+    }
+
+    private static Scene createScenes() {
+        System.out.println("\n***called createScenes() in MapControl***");
+        return null;
     }
     
 }

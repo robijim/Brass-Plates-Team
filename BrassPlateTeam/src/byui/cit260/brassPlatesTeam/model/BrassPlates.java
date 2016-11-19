@@ -17,6 +17,9 @@ public class BrassPlates implements Serializable {
     private Game game;
     
     public BrassPlates(){
+        this.description= "\nThese are the Brass Plates Nephi and his brothers"
+                         + "\nwere asked to look for in Jerusalem.";
+        this.owner= "Laban";
     }
 
     public String getDescription() {

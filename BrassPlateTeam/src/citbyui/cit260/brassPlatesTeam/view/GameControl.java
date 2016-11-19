@@ -7,6 +7,7 @@ package citbyui.cit260.brassPlatesTeam.view;
 
 import brassplateteam.BrassPlateTeam;
 import buyi.cit460.brassPlatesTeam.control.MapControl;
+import byui.cit260.brassPlatesTeam.model.Actor;
 import byui.cit260.brassPlatesTeam.model.BrassPlates;
 import byui.cit260.brassPlatesTeam.model.Game;
 import byui.cit260.brassPlatesTeam.model.Item;

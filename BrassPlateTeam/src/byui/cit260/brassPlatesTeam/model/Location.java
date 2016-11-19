@@ -6,6 +6,7 @@
 package byui.cit260.brassPlatesTeam.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -20,6 +21,8 @@ public class Location implements Serializable{
     private double amountRemaining;
     private String name;
     private Item[] item;
+    private Scene scene;
+    private ArrayList<Actor> actor;
     
     public Location() {
     }
@@ -72,6 +75,22 @@ public class Location implements Serializable{
 
     public void setItem(Item[] item) {
         this.item = item;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public ArrayList<Actor> getActor() {
+        return actor;
+    }
+
+    public void setActor(ArrayList<Actor> actor) {
+        this.actor = actor;
     }
     
     
