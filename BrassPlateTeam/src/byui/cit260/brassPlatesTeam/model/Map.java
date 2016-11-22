@@ -87,5 +87,10 @@ public class Map implements Serializable{
     public void setLocation(Location[][] location) {
         this.locations = location;
     }
+
+    public Location[][] getLocations() {
+        System.out.println("***getLocations() has been called***");
+        return null;
+    }
     
 }
