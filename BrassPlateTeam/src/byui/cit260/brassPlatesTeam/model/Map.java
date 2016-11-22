@@ -20,8 +20,8 @@ public class Map implements Serializable{
     private Location[][] locations;
 
     private Game[] game;
-    private int nRows;
-    private int nColumns;
+    public int nRows;
+    public int nColumns;
     
     public Map(int nRows, int nColumns) {
         if(nRows<1 || nColumns<1) {
@@ -30,6 +30,7 @@ public class Map implements Serializable{
         }
         this.nRows = nRows;
         this.nColumns = nColumns;
+        
         this.locations = new Location[nRows] [nColumns];
         for (int row = 0; row<nRows; row++) {
             for (int column = 0; column<nColumns; column++) {

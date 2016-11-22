@@ -8,6 +8,8 @@ package citbyui.cit260.brassPlatesTeam.view;
 import brassplateteam.BrassPlateTeam;
 import byui.cit260.brassPlatesTeam.model.Game;
 import byui.cit260.brassPlatesTeam.model.Item;
+import byui.cit260.brassPlatesTeam.model.Location;
+import byui.cit260.brassPlatesTeam.model.Map;
 
 /**
  *
@@ -43,7 +45,7 @@ public class GameMenuView extends View{
                this.viewInventory();
                break;
             case "V":
-               this.viewMap();
+               this.displayMap();
                break;
             case "M": //know the goal of the quest
              this.moveLocation();
@@ -112,8 +114,30 @@ public class GameMenuView extends View{
         System.out.println("\n*** saveAndContinue function called ***");
     }
 
-    private void viewMap() {
-        System.out.println("\n*** viewMap function called ***");
+    private void displayMap() {
+        
+        Game game = BrassPlateTeam.getCurrentGame();
+        Map map = game.getMap();
+        Location[][] location = map.getLocations();
+        
+        System.out.println("\tBRASS PLATES QUEST");
+        
+        System.out.println("\t1 \t2 \t3 \t3 \t4 \t5 \t6 \t7 \t8 \t9 \t10");
+        
+        int nRows= map.nRows;
+        int nColumns = map.nColumns;
+        
+        for(int i = 0 ; i<=nRows ; i++){
+            System.out.println("\n---------------------------------------------");
+            
+            System.out.print("\n" + nRows);
+            
+            for (int j = 0; j<=nColumns; j++){
+                System.out.print("| ");
+                
+                location[nRows][nColumns];
+            }
+        }
     }
     
 }
