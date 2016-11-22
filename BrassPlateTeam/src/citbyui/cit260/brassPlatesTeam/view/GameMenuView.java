@@ -135,7 +135,7 @@ public class GameMenuView extends View{
             for (int j = 0; j<=nColumns; j++){
                 System.out.print("| ");
                 
-                  .location = [map.nRows] [map.nColumns];
+                  GameControl.assignScenesToLocations = [map.nRows] [map.nColumns];
             }
         }
     }
