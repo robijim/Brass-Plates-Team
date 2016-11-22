@@ -42,6 +42,9 @@ public class GameMenuView extends View{
             case "I":
                this.viewInventory();
                break;
+            case "V":
+               this.viewMap();
+               break;
             case "M": //know the goal of the quest
              this.moveLocation();
              break;
@@ -71,7 +74,7 @@ public class GameMenuView extends View{
     private void viewInventory() {
         StringBuilder line;
         Game game = BrassPlateTeam.getCurrentGame();
-        Item[] item = game.getItem();
+        Item[] inventory = game.getItem();
         System.out.println("\n  LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                             ");
         line.insert(0, "DESCRIPTION");
@@ -107,6 +110,10 @@ public class GameMenuView extends View{
 
     private void saveAndContinue() {
         System.out.println("\n*** saveAndContinue function called ***");
+    }
+
+    private void viewMap() {
+        System.out.println("\n*** viewMap function called ***");
     }
     
 }

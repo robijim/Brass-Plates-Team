@@ -103,11 +103,11 @@ public class Scene implements Serializable{
     }
 
     public void setMapSymbol(String _st_) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** setMapSymbol function called ***");
     }
 
     public void setBlockedLocation(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** setBlockedLocation function called ***");
     }
 
     

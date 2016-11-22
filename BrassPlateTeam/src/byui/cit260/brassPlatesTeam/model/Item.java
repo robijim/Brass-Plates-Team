@@ -91,19 +91,21 @@ public class Item implements Serializable{
     }
 
     public void setQuantityInStock(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** setQuantityInStock function called ***");
     }
 
     public void setRequiredAmount(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** setRequiredAmount function called ***");
     }
 
     public Object getRequiredAmount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** getRequiredAmount function called ***");
+        return null;
     }
 
     public Object getQuantityInStock() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** getQuantityInStock function called ***");
+        return null;
     }
     
 }
