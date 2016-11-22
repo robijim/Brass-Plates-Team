@@ -122,7 +122,7 @@ public class GameMenuView extends View{
         
         System.out.println("\tBRASS PLATES QUEST");
         
-        System.out.println("\t1 \t2 \t3 \t3 \t4 \t5 \t6 \t7 \t8 \t9 \t10");
+        System.out.println("\t1 \t2 \t3 \t4 \t5 \t6 \t7 \t8 \t9 \t10 \t11");
         
         int nRows= map.nRows;
         int nColumns = map.nColumns;
@@ -135,7 +135,7 @@ public class GameMenuView extends View{
             for (int j = 0; j<=nColumns; j++){
                 System.out.print("| ");
                 
-                location[nRows][nColumns];
+                  .location = [map.nRows] [map.nColumns];
             }
         }
     }
