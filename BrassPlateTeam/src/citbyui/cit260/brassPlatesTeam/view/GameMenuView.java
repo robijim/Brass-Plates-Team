@@ -5,6 +5,10 @@
  */
 package citbyui.cit260.brassPlatesTeam.view;
 
+import brassplateteam.BrassPlateTeam;
+import byui.cit260.brassPlatesTeam.model.Game;
+import byui.cit260.brassPlatesTeam.model.Item;
+
 /**
  *
  * @author camilaortega
@@ -16,8 +20,8 @@ public class GameMenuView extends View{
                 + "\n-------------------------------"
                 + "\n| Game Menu                   |"
                 + "\n-------------------------------"
-                + "\nA  - Access map               |"
-                + "\nI   - Inventory               |"
+                + "\nA - Access map                |"
+                + "\nI - Inventory                 |"
                 + "\nM - Move to location          |"
                 + "\nF - Search current location   |"
                 + "\nP - Pick up item              |"
@@ -36,7 +40,7 @@ public class GameMenuView extends View{
                 this.accessGame();
                 break;
             case "I":
-               this.travelingGame();
+               this.viewInventory();
                break;
             case "M": //know the goal of the quest
              this.moveLocation();
@@ -64,8 +68,25 @@ public class GameMenuView extends View{
         System.out.println("\n*** accessGame function called ***");
     }
 
-    private void travelingGame() {
-        System.out.println("\n*** travelingGame function called ***");
+    private void viewInventory() {
+        StringBuilder line;
+        Game game = BrassPlateTeam.getCurrentGame();
+        Item[] item = game.getItem();
+        System.out.println("\n  LIST OF INVENTORY ITEMS");
+        line = new StringBuilder("                             ");
+        line.insert(0, "DESCRIPTION");
+        line.insert(20, "REQUIRED");
+        line.insert(30, "IN STOCK");
+        System.out.println(line.toString());
+        
+        //for each inventory item
+        for(Item item : inventory) {
+            line = new StringBuilder("                         ");
+            line.insert(0, item.getDescription());
+            line.insert(23, item.getRequiredAmount());
+            line.insert(33, item.getQuantityInStock());
+            
+        }
     }
 
     private void moveLocation() {

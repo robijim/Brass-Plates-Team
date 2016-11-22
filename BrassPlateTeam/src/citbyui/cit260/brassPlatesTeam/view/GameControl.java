@@ -72,33 +72,33 @@ public class GameControl {
      
     public static Item[] createInventoryList() {
         
-        Item[] item = 
+        Item[] inventory = 
             new Item[4];
         
         Item plank = new Item();
         plank.setDescription("plank");
         plank.setQuantityInStock(0);
         plank.setRequiredAmount(0);
-        item[Index.plank.ordinal()] = plank;
+        inventory[Index.plank.ordinal()] = plank;
         
         Item gold = new Item();
         gold.setDescription("gold");
         gold.setQuantityInStock(0);
         gold.setRequiredAmount(0);
-        item[Index.gold.ordinal()] = gold;
+        inventory[Index.gold.ordinal()] = gold;
         
         Item silver = new Item();
         silver.setDescription("silver");
         silver.setQuantityInStock(0);
         silver.setRequiredAmount(0);
-        item[Index.silver.ordinal()] = silver;
+        inventory[Index.silver.ordinal()] = silver;
         
         Item container = new Item();
         container.setDescription("container");
         container.setQuantityInStock(0);
         container.setRequiredAmount(0);
-        item[Index.container.ordinal()] = container;
+        inventory[Index.container.ordinal()] = container;
         
-        return item;
+        return inventory;
     }
 }
