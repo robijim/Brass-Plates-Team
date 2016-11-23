@@ -16,13 +16,13 @@ import java.util.Objects;
 public class Map implements Serializable{
     private String direction;
     private double rowCount;
-    private String columnCount;
+    private double columnCount;
     public Location[][] locations;
 
     private Game[] game;
     public int nRows;
     public int nColumns;
-    public Location[][][][] getLocations;
+    public Location[][] getLocations;
     
     public Map(int nRows, int nColumns) {
         if(nRows<1 || nColumns<1) {
@@ -35,9 +35,11 @@ public class Map implements Serializable{
         this.locations = new Location[nRows][nColumns];
         for (int row = 0; row<nRows; row++) {
             for (int column = 0; column<nColumns; column++) {
+                Scene scene = new Scene();
                 Location location = new Location();
                 location.setColumn(column);
                 location.setRow(row);
+                location.setScene(scene);
                 location.setVisited(false);
                 locations[row][column] = location;
             }
@@ -54,18 +56,18 @@ public class Map implements Serializable{
     }
 
     public double getRowCount() {
-        return rowCount;
+        return (int) rowCount;
     }
 
     public void setRowCount(double rowCount) {
         this.rowCount = rowCount;
     }
 
-    public String getColumnCount() {
+    public double getColumnCount() {
         return columnCount;
     }
 
-    public void setColumnCount(String columnCount) {
+    public void setColumnCount(double columnCount) {
         this.columnCount = columnCount;
     }
     

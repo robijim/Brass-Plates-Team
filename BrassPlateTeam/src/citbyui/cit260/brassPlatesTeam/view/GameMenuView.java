@@ -6,6 +6,7 @@
 package citbyui.cit260.brassPlatesTeam.view;
 
 import brassplateteam.BrassPlateTeam;
+import buyi.cit460.brassPlatesTeam.control.MapControl;
 import byui.cit260.brassPlatesTeam.model.Game;
 import byui.cit260.brassPlatesTeam.model.Item;
 import byui.cit260.brassPlatesTeam.model.Location;
@@ -120,22 +121,27 @@ public class GameMenuView extends View{
         Game game = BrassPlateTeam.getCurrentGame();
         Map map = game.getMap();
         Location[][] locations = map.getLocations();
+        double nRows= map.getRowCount();
+        double nColumns = map.getColumnCount();
+        String line;
         
-        System.out.println("\tBRASS PLATES QUEST");
+        System.out.println("\tBRASS PLATES MAP");
         
-        System.out.println("  1    2    3    4    5    6    7    8    9    10");
-        
-        int nRows= map.nRows;
-        int nColumns = map.nColumns;
-        
+        System.out.println("\n--------------------------------------------");
         for(int i = 0 ; i<=nRows ; i++){
-            System.out.println("\n---------------------------------------------");
+            line = String.valueOf(i);
+            if(i<20)line += ("\n--------------------------------------------");
             
-            System.out.print("\n" + nRows);
+            for(int j = 0; j<nColumns; j++) {
+                Location location = map.getLocations[i][j];
+                line+="|" + MapControl.getMapSymbol();
+            }     
+            System.out.println(line + "|");
+            /*System.out.print("\n" + nRows);
             
             for (int j = 0; j<=nColumns; j++){
                 System.out.print("| ");
-                locations = map.getLocations[nRows][nColumns];
+                /*locations = map.getLocations[nRows][nColumns];
                 
                 if(locations[i][j].getScene() == null) {
                     System.out.print(" ?? |");
@@ -144,7 +150,7 @@ public class GameMenuView extends View{
                 }
                 System.out.print("|");
             }
-            System.out.println("\n---------------------------------------------");
+            System.out.println("\n---------------------------------------------");*/
         }
     }
     

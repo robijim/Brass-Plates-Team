@@ -111,9 +111,12 @@ public class Scene implements Serializable{
     }
 
     public String getMapSymbol() {
-        System.out.println("\n*** getMapSymbol function called ***");
-        return null;
+       if(this == null) {
+           return "  ";
+       }
+       return getMapSymbol();
     }
+    
 
     
 }

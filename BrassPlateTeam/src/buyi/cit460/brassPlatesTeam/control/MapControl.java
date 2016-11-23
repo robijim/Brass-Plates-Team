@@ -228,11 +228,9 @@ public class MapControl {
         
             return scene;
     }
-    
 
-    public String getMapSymbol() {
-        System.out.println("\n*** getMapSymbol function called ***");
-        return null;
+    public static String getMapSymbol() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-}
+
+    }
