@@ -110,5 +110,10 @@ public class Scene implements Serializable{
         System.out.println("\n*** setBlockedLocation function called ***");
     }
 
+    public String getMapSymbol() {
+        System.out.println("\n*** getMapSymbol function called ***");
+        return null;
+    }
+
     
 }

@@ -7,7 +7,6 @@ package citbyui.cit260.brassPlatesTeam.view;
 
 import brassplateteam.BrassPlateTeam;
 import buyi.cit460.brassPlatesTeam.control.MapControl;
-import byui.cit260.brassPlatesTeam.model.Actor;
 import byui.cit260.brassPlatesTeam.model.BrassPlates;
 import byui.cit260.brassPlatesTeam.model.Game;
 import byui.cit260.brassPlatesTeam.model.Item;
@@ -26,8 +25,8 @@ public class GameControl {
         game.setPlayer(player); //save player in game
         
         //create the inventory and save in the game
-        Item[] item = GameControl.createInventoryList();
-        game.setItem(item);
+        Item[] inventory = GameControl.createInventoryList();
+        game.setInventory(inventory);
         
         Map map = MapControl.createMap(); // create new map
         game.setMap(map); //save map

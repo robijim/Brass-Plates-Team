@@ -30,17 +30,17 @@ public class GameControl {
     }
     
     static void assignScenesToLocations(Map map, Scene[] scene) {
-        Location[][] location = map.getLocations();
+        Location[][] locations = map.getLocations();
         
         //start point
-        location[0][0].setScene(scene[SceneType.start.ordinal()]);
-        location[0][1].setScene(scene[SceneType.desert.ordinal()]);
-        location[0][2].setScene(scene[SceneType.cityGate.ordinal()]);
-        location[0][3].setScene(scene[SceneType.labansHouse1.ordinal()]);
-        location[0][4].setScene(scene[SceneType.resource.ordinal()]);
-        location[0][5].setScene(scene[SceneType.labansHouse2.ordinal()]);
-        location[0][6].setScene(scene[SceneType.armor.ordinal()]);
-        location[0][7].setScene(scene[SceneType.treasury.ordinal()]);
-        location[0][8].setScene(scene[SceneType.finish.ordinal()]);
+        locations[0][0].setScene(scene[SceneType.start.ordinal()]);
+        locations[0][1].setScene(scene[SceneType.desert.ordinal()]);
+        locations[0][2].setScene(scene[SceneType.cityGate.ordinal()]);
+        locations[0][3].setScene(scene[SceneType.labansHouse1.ordinal()]);
+        locations[0][4].setScene(scene[SceneType.resource.ordinal()]);
+        locations[0][5].setScene(scene[SceneType.labansHouse2.ordinal()]);
+        locations[0][6].setScene(scene[SceneType.armor.ordinal()]);
+        locations[0][7].setScene(scene[SceneType.treasury.ordinal()]);
+        locations[0][8].setScene(scene[SceneType.finish.ordinal()]);
     }
 }

@@ -20,7 +20,7 @@ public class Game implements Serializable{
     private Map map;
     private Player player;
     private Actor[] actor;
-    private Item[] item;
+    private Item[] inventory;
     private BrassPlates brassplates;
     
     public Game() {
@@ -90,12 +90,12 @@ public class Game implements Serializable{
         this.actor = actor;
     }
 
-    public Item[] getItem() {
-        return item;
+    public Item[] getInventory() {
+        return inventory;
     }
 
-    public void setItem(Item[] item) {
-        this.item = item;
+    public void setInventory(Item[] inventory) {
+        this.inventory = inventory;
     }
 
     public BrassPlates getBrassplates() {

@@ -229,4 +229,10 @@ public class MapControl {
             return scene;
     }
     
+
+    public String getMapSymbol() {
+        System.out.println("\n*** getMapSymbol function called ***");
+        return null;
+    }
+    
 }

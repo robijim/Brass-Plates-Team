@@ -24,6 +24,7 @@ public class GameMenuView extends View{
                 + "\n-------------------------------"
                 + "\nA - Access map                |"
                 + "\nI - Inventory                 |"
+                + "\nV - Display map               |"
                 + "\nM - Move to location          |"
                 + "\nF - Search current location   |"
                 + "\nP - Pick up item              |"
@@ -76,7 +77,7 @@ public class GameMenuView extends View{
     private void viewInventory() {
         StringBuilder line;
         Game game = BrassPlateTeam.getCurrentGame();
-        Item[] inventory = game.getItem();
+        Item[] inventory = game.getInventory();
         System.out.println("\n  LIST OF INVENTORY ITEMS");
         line = new StringBuilder("                             ");
         line.insert(0, "DESCRIPTION");
@@ -118,11 +119,11 @@ public class GameMenuView extends View{
         
         Game game = BrassPlateTeam.getCurrentGame();
         Map map = game.getMap();
-        Location[][] location = map.getLocations();
+        Location[][] locations = map.getLocations();
         
         System.out.println("\tBRASS PLATES QUEST");
         
-        System.out.println("\t1 \t2 \t3 \t3 \t4 \t5 \t6 \t7 \t8 \t9 \t10");
+        System.out.println("  1    2    3    4    5    6    7    8    9    10");
         
         int nRows= map.nRows;
         int nColumns = map.nColumns;
@@ -135,8 +136,16 @@ public class GameMenuView extends View{
             for (int j = 0; j<=nColumns; j++){
                 System.out.print("| ");
                 
-                location[nRows][nColumns];
+                locations = map.getLocations[nRows][nColumns];
+                
+                if(locations[i][j].getScene() == null) {
+                    System.out.print(" ?? |");
+                } else {
+                    System.out.print(" " + locations[i][j].getScene().getMapSymbol() + " ");
+                }
+                System.out.print("|");
             }
+            System.out.println("\n---------------------------------------------");
         }
     }
     

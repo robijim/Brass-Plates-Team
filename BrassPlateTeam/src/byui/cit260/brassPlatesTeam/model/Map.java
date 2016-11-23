@@ -17,11 +17,12 @@ public class Map implements Serializable{
     private String direction;
     private double rowCount;
     private String columnCount;
-    private Location[][] locations;
+    public Location[][] locations;
 
     private Game[] game;
     public int nRows;
     public int nColumns;
+    public Location[][][][] getLocations;
     
     public Map(int nRows, int nColumns) {
         if(nRows<1 || nColumns<1) {
@@ -31,7 +32,7 @@ public class Map implements Serializable{
         this.nRows = nRows;
         this.nColumns = nColumns;
         
-        this.locations = new Location[nRows] [nColumns];
+        this.locations = new Location[nRows][nColumns];
         for (int row = 0; row<nRows; row++) {
             for (int column = 0; column<nColumns; column++) {
                 Location location = new Location();
@@ -81,17 +82,12 @@ public class Map implements Serializable{
         this.game = game;
     }
 
-    public Location[][] getLocation() {
+    public Location[][] getLocations() {
         return locations;
     }
 
     public void setLocation(Location[][] location) {
         this.locations = location;
-    }
-
-    public Location[][] getLocations() {
-        System.out.println("***getLocations() has been called***");
-        return null;
     }
     
 }

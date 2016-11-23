@@ -20,7 +20,7 @@ public class Location implements Serializable{
     private boolean visited;
     private double amountRemaining;
     private String name;
-    private Item[] item;
+    private Item[] inventory;
     private Scene scene;
     private ArrayList<Actor> actor;
     
@@ -70,11 +70,11 @@ public class Location implements Serializable{
     }
 
     public Item[] getItem() {
-        return item;
+        return inventory;
     }
 
     public void setItem(Item[] item) {
-        this.item = item;
+        this.inventory = item;
     }
 
     public Scene getScene() {
