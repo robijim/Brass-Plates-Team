@@ -135,7 +135,6 @@ public class GameMenuView extends View{
             
             for (int j = 0; j<=nColumns; j++){
                 System.out.print("| ");
-                
                 locations = map.getLocations[nRows][nColumns];
                 
                 if(locations[i][j].getScene() == null) {
