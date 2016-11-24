@@ -6,7 +6,6 @@
 package citbyui.cit260.brassPlatesTeam.view;
 
 import brassplateteam.BrassPlateTeam;
-import buyi.cit460.brassPlatesTeam.control.MapControl;
 import byui.cit260.brassPlatesTeam.model.Game;
 import byui.cit260.brassPlatesTeam.model.Item;
 import byui.cit260.brassPlatesTeam.model.Location;
@@ -92,7 +91,6 @@ public class GameMenuView extends View{
             line.insert(0, item.getDescription());
             line.insert(23, item.getRequiredAmount());
             line.insert(33, item.getQuantityInStock());
-            
         }
     }
 
@@ -130,9 +128,10 @@ public class GameMenuView extends View{
         System.out.println("  1    2    3    4    5    6    7    8    9    10");
         System.out.println("\n---------------------------------------------------");
         
-        for(int i = 0 ; i < 20 ; i++){
-            if(i < (20 - 1)){
-                System.out.print(" ");
+        for(int i = 1 ; i < 20 ; i++){
+            
+            if(i <= (20 - 1) && i != 0){
+                System.out.print(i);
             }
             
             for (int j = 0; j < 20; j++) {
@@ -145,7 +144,8 @@ public class GameMenuView extends View{
                 System.out.print("|");
             }
             System.out.print("\n");
+            
+            System.out.println("\n---------------------------------------------------");
         }
-        System.out.println("\n---------------------------------------------------");
     }
 }

@@ -62,7 +62,10 @@ public class MainMenuView extends View {
             case "Z": //display Laban's house menu
              this.displayLabansHouseMenu();
              break;
-            case "R": //display the help menu
+            case "R": // roll dice
+                this.rollDice();
+                break;
+            case "W": //display the help menu
              this.displayCastLotsView();
              break;
             case "G": //save the current game
@@ -129,6 +132,10 @@ public class MainMenuView extends View {
         
         LabansHouseMenuView labansHouse = new LabansHouseMenuView();
         labansHouse.display();
+    }
+
+    private void rollDice() {
+        
     }
     
 }

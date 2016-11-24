@@ -13,7 +13,12 @@ import java.util.Objects;
  * @author JosephKH
  */
 public class Item implements Serializable{
-    
+    public enum Index {
+        plank,
+        gold,
+        silver,
+        container;
+    }
     //class instance variable
     private String description;
     
@@ -104,8 +109,11 @@ public class Item implements Serializable{
     }
 
     public Object getQuantityInStock() {
-        System.out.println("\n*** getQuantityInStock function called ***");
-        return null;
+        int total = 0;
+        for (int i=0; i <total; i++){
+            total++;
+        }
+        return total;
     }
     
 }
