@@ -128,30 +128,29 @@ public class GameMenuView extends View{
         System.out.println("\tBRASS PLATES MAP");
         
         System.out.println("\n--------------------------------------------");
+        System.out.println("  1    2    3    4    5    6    7    8    9    10");
+        
+        System.out.println("Rows: " + nRows);
+        System.out.println("Columns: " + nColumns);
+        
+         Location l= map.getLocations[0][0];
+            System.out.println(l.getScene());
         for(int i = 0 ; i<=nRows ; i++){
-            line = String.valueOf(i);
-            if(i<20)line += ("\n--------------------------------------------");
+            line=String.valueOf(i);
+            if(i < (nRows-1)) line += " ";
             
-            for(int j = 0; j<nColumns; j++) {
-                Location location = map.getLocations[i][j];
-                line+="|" + MapControl.getMapSymbol();
-            }     
-            System.out.println(line + "|");
-            /*System.out.print("\n" + nRows);
-            
-            for (int j = 0; j<=nColumns; j++){
-                System.out.print("| ");
-                /*locations = map.getLocations[nRows][nColumns];
-                
+            for (int j = 0; j<nColumns; j++) {
+                l = map.getLocations[i][j];
+                System.out.println(l.getScene());
+                /*
                 if(locations[i][j].getScene() == null) {
                     System.out.print(" ?? |");
                 } else {
                     System.out.print(" " + locations[i][j].getScene().getMapSymbol() + " ");
                 }
-                System.out.print("|");
+                System.out.print("|");*/
             }
-            System.out.println("\n---------------------------------------------");*/
+            
         }
     }
-    
 }
