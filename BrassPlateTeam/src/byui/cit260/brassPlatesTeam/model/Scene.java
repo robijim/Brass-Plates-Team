@@ -13,10 +13,23 @@ import java.util.Objects;
  * @author jamesrobison
  */
 public class Scene implements Serializable{
+    public enum SceneType {
+        start,
+        desert,
+        cityGate,
+        labansHouse1,
+        resource,
+        labansHouse2,
+        armor,
+        treasury,
+        finish;
+    }
+    
     private String description;
     private double travelTime;
     private String blockedLocation;
     private String availableLocation;
+    public String mapSymbol;
     
     
     public Scene() {
@@ -102,21 +115,18 @@ public class Scene implements Serializable{
         return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", blockedLocation=" + blockedLocation + ", availableLocation=" + availableLocation + '}';
     }
 
-    public void setMapSymbol(String _st_) {
-        System.out.println("\n*** setMapSymbol function called ***");
-    }
-
     public void setBlockedLocation(boolean b) {
         System.out.println("\n*** setBlockedLocation function called ***");
     }
 
     public String getMapSymbol() {
-       if(this == null) {
-           return "  ";
-       }
-       return getMapSymbol();
+       return mapSymbol;
     }
     
+    public void setMapSymbol(String getMapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+
 
     
 }

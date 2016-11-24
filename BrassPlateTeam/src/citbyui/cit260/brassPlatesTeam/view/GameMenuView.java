@@ -123,34 +123,29 @@ public class GameMenuView extends View{
         Location[][] locations = map.getLocations();
         double nRows= map.getRowCount();
         double nColumns = map.getColumnCount();
-        String line;
         
         System.out.println("\tBRASS PLATES MAP");
         
-        System.out.println("\n--------------------------------------------");
+        System.out.println("\n---------------------------------------------------");
         System.out.println("  1    2    3    4    5    6    7    8    9    10");
+        System.out.println("\n---------------------------------------------------");
         
-        System.out.println("Rows: " + nRows);
-        System.out.println("Columns: " + nColumns);
-        
-         Location l= map.getLocations[0][0];
-            System.out.println(l.getScene());
-        for(int i = 0 ; i<=nRows ; i++){
-            line=String.valueOf(i);
-            if(i < (nRows-1)) line += " ";
+        for(int i = 0 ; i < 20 ; i++){
+            if(i < (20 - 1)){
+                System.out.print(" ");
+            }
             
-            for (int j = 0; j<nColumns; j++) {
-                l = map.getLocations[i][j];
-                System.out.println(l.getScene());
-                /*
-                if(locations[i][j].getScene() == null) {
-                    System.out.print(" ?? |");
+            for (int j = 0; j < 20; j++) {
+                
+                if(locations[i][j].getScene().getMapSymbol() == null) {
+                    System.out.print("??|");
                 } else {
                     System.out.print(" " + locations[i][j].getScene().getMapSymbol() + " ");
                 }
-                System.out.print("|");*/
+                System.out.print("|");
             }
-            
+            System.out.print("\n");
         }
+        System.out.println("\n---------------------------------------------------");
     }
 }
