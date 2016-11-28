@@ -6,7 +6,6 @@
 package citbyui.cit260.brassPlatesTeam.view;
 
 import brassplateteam.BrassPlateTeam;
-import java.util.Scanner;
 
 /**
  *
@@ -62,9 +61,6 @@ public class MainMenuView extends View {
             case "Z": //display Laban's house menu
              this.displayLabansHouseMenu();
              break;
-            case "R": // roll dice
-                this.rollDice();
-                break;
             case "W": //display the help menu
              this.displayCastLotsView();
              break;
@@ -81,9 +77,20 @@ public class MainMenuView extends View {
         return false;
     }
 
-    private void startNewGame() {
-        // create a new game
-        GameControl.createNewGame(BrassPlateTeam.getPlayer());
+    private void startNewGame(){
+        try{
+            // create a new game
+            GameControl.createNewGame(BrassPlateTeam.getPlayer());
+        } catch (MapControlException mce){
+            System.out.println(mce.getMessage());
+            return;
+        } catch(Throwable te){
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            return;
+        } finally {
+            System.out.close();
+        }
         
         //display the game menu
         GameMenuView gameMenu = new GameMenuView();
@@ -132,10 +139,6 @@ public class MainMenuView extends View {
         
         LabansHouseMenuView labansHouse = new LabansHouseMenuView();
         labansHouse.display();
-    }
-
-    private void rollDice() {
-        
     }
     
 }
