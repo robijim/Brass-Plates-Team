@@ -80,22 +80,8 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame(){
-        try{
-            // create a new game
-            GameControl.createNewGame(BrassPlateTeam.getPlayer());
-        } 
-        catch (GameControlException mce){
-            System.out.println(mce.getMessage());
-            return;
-        } 
-        catch(Throwable te){
-            System.out.println(te.getMessage());
-            te.printStackTrace();
-            return;
-        } finally {
-            System.out.close();
-        }
-        
+            //create a new game
+            GameControl.createNewGame(BrassPlateTeam.getPlayer());      
         //display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();

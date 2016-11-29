@@ -5,6 +5,8 @@
  */
 package buyi.cit460.brassPlatesTeam.control;
 
+import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
+
 /**
  *
  * @author camilaortega
@@ -12,43 +14,43 @@ package buyi.cit460.brassPlatesTeam.control;
 
 public class InventoryControl {
     
-    public double calcVolumeOfContainer(double height, double diameter){
+    public void calcVolumeOfContainer(double height, double diameter)
+            throws InventoryControlException {
         if(height < 0 || height >18) {
-            return -1;
+            throw new InventoryControlException("Height must be greater than 0, and less than 18 inches.");
         } 
         if (diameter < 0 || diameter >18){
-            return -1;
+            throw new InventoryControlException("Diameter must be greater than 0, and less than 18 inches.");
         }
         double radius = diameter /2;
 
         double volume = 3.14 * (radius * radius) *height;
-
-        return volume;
     }
 
-    public double calcContainersNeeded (double amountRequired, double amountContained, double volume){
+    public void calcContainersNeeded (double amountRequired, double amountContained, double volume)
+            throws InventoryControlException {
         if (amountRequired < 0 || amountRequired >4580) {
-            return -1;
+            throw new InventoryControlException("Value must be greater than 0, and less than 4580.");
         } 
 	if (amountContained < 0 || volume >4580) {
-            return -1;
+            throw new InventoryControlException("Height must be greater than 0, and less than 18 feet.");
         }
         if (volume < 0 || volume >4580) {
-            return -1;
+            throw new InventoryControlException("Height must be greater than 0, and less than 18 feet.");
         }
 	if (amountRequired > volume || volume< amountContained) {
-            return -1;
+            throw new InventoryControlException("Height must be greater than 0, and less than 18 feet.");
         }
 	double amountNeeded = amountContained - amountRequired;
-	return amountNeeded; 
     }
         
-    public double calcTreesNeededForContainer (double height, double diameter){
+    public double calcTreesNeededForContainer (double height, double diameter)
+            throws InventoryControlException {
         if(height < 2 || height >16){
-            return -1;
+            throw new InventoryControlException("Height must be greater than 0, and less than 18 feet.");
         }
         if (diameter < 2 || diameter > 6){
-            return -1;
+            throw new InventoryControlException("Height must be greater than 0, and less than 18 feet.");
         }
         int planksNeeded = 30;
         if (diameter <= 3){
@@ -67,18 +69,18 @@ public class InventoryControl {
         return treesNeeded;
     }
     
-    public double calcAmountOfGoldAndSilver (double container, double gold, double silver){
+    public void calcAmountOfGoldAndSilver (double container, double gold, double silver)
+            throws InventoryControlException {
         if(gold < 0 || gold > 40){
-            return -1;
+            throw new InventoryControlException("Height must be greater than 0, and less than 18 feet.");
         }
         if (silver <0 || silver > 20){
-            return -1;
+            throw new InventoryControlException("Height must be greater than 0, and less than 18 feet.");
         }
         if (container == 0 || container > 30){
-            return -1;
+            throw new InventoryControlException("Height must be greater than 0, and less than 18 feet.");
         }
         container = gold + silver;
         double weight = container * 9.8;
-        return weight;
     }
 }
