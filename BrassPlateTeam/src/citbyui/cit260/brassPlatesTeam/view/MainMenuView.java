@@ -5,6 +5,8 @@
  */
 package citbyui.cit260.brassPlatesTeam.view;
 
+import byui.cit260.brassPlatesTeam.exceptions.GameControlException;
+import byui.cit260.brassPlatesTeam.exceptions.GameControlException;
 import brassplateteam.BrassPlateTeam;
 
 /**
@@ -81,10 +83,12 @@ public class MainMenuView extends View {
         try{
             // create a new game
             GameControl.createNewGame(BrassPlateTeam.getPlayer());
-        } catch (MapControlException mce){
+        } 
+        catch (GameControlException mce){
             System.out.println(mce.getMessage());
             return;
-        } catch(Throwable te){
+        } 
+        catch(Throwable te){
             System.out.println(te.getMessage());
             te.printStackTrace();
             return;
