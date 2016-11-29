@@ -33,13 +33,13 @@ public class InventoryControl {
             throw new InventoryControlException("Value must be greater than 0, and less than 4580.");
         } 
 	if (amountContained < 0 || volume >4580) {
-            throw new InventoryControlException("Height must be greater than 0, and less than 18 feet.");
+            throw new InventoryControlException("Amount contained must be greater than 0, and total volume must be less than 4580.");
         }
         if (volume < 0 || volume >4580) {
-            throw new InventoryControlException("Height must be greater than 0, and less than 18 feet.");
+            throw new InventoryControlException("Value must be greater than 0, and total volume cannot exceed 4580.");
         }
 	if (amountRequired > volume || volume< amountContained) {
-            throw new InventoryControlException("Height must be greater than 0, and less than 18 feet.");
+            throw new InventoryControlException("Amount required cannot exceed total volume, and volume cannot be less than the amount contained.");
         }
 	double amountNeeded = amountContained - amountRequired;
     }
