@@ -6,6 +6,7 @@
 package citbyui.cit260.brassPlatesTeam.view;
 
 import buyi.cit460.brassPlatesTeam.control.GameControl;
+import byui.cit260.brassPlatesTeam.exceptions.GameControlException;
 import byui.cit260.brassPlatesTeam.model.Player;
 import java.util.Scanner;
 
@@ -80,16 +81,16 @@ public class StartProgramView extends View{
             return false;
         }
         
-        //call createPlayer() control function
-        Player player = GameControl.createPlayer(value);
-        
-        if (player == null) { //if unsuccessful
-            System.out.println ("\nError creating the player.");
-            return false;
-        }
+        //call createPlayer() control function                
+        try{
+            Player player = GameControl.createPlayer(value);
+            //display next view
+            this.displayNextView(player);
             
-        //display next view
-        this.displayNextView(player);
+        } catch (GameControlException me){
+            System.out.println(me.getMessage());
+        }
+        
         
         return true; // success!
     }

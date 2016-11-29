@@ -6,6 +6,7 @@
 package buyi.cit460.brassPlatesTeam.control;
 
 import brassplateteam.BrassPlateTeam;
+import byui.cit260.brassPlatesTeam.exceptions.GameControlException;
 import byui.cit260.brassPlatesTeam.model.Location;
 import byui.cit260.brassPlatesTeam.model.Map;
 import byui.cit260.brassPlatesTeam.model.Player;
@@ -17,9 +18,10 @@ import byui.cit260.brassPlatesTeam.model.Scene;
  */
 public class GameControl {
 
-    public static Player createPlayer(String name) {
+    public static Player createPlayer(String name) 
+                    throws GameControlException{
         if (name == null) {
-            return null;
+            throw new GameControlException("Name cannot be blank.");
         }
         
         Player player = new Player();
