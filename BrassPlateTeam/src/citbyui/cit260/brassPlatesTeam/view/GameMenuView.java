@@ -25,6 +25,7 @@ public class GameMenuView extends View{
                 + "\nA - Access map                |"
                 + "\nI - Inventory                 |"
                 + "\nV - Display map               |"
+                + "\nK - Measure plank             |"
                 + "\nM - Move to location          |"
                 + "\nF - Search current location   |"
                 + "\nP - Pick up item              |"
@@ -59,6 +60,9 @@ public class GameMenuView extends View{
                break;
             case "D": //know the goal of the quest
              this.dropItem();
+             break;
+            case "K": //know the goal of the quest
+             this.measurePlank();
              break;
              case "S": //know the goal of the quest
              this.saveAndContinue();
@@ -147,5 +151,35 @@ public class GameMenuView extends View{
             
             System.out.println("\n---------------------------------------------------");
         }
+    }
+
+    private Double measurePlank() {
+        
+        displayPlankBanner();
+        Double number = null;
+    
+        while (number == null){
+            String value = this.getInput();
+            value = value.trim().toUpperCase();
+            if(value.equals('K'))
+                break;
+            //parse and convert number from text to double
+            try{
+                number = Double.parseDouble(value);
+            }
+            catch(NumberFormatException nf){
+                System.out.println("Try again or press 'Q' to quit."
+                                    + "You must enter a valid number");
+            }
+            }
+        return number;
+    }
+
+    private void displayPlankBanner() {
+        System.out.println(
+                "\n****************************************************************"
+              + "\n* Enter a valid number of planks                               *"
+              + "\n****************************************************************"
+        );
     }
 }
