@@ -5,6 +5,9 @@
  */
 package citbyui.cit260.brassPlatesTeam.view;
 
+import buyi.cit460.brassPlatesTeam.control.InventoryControl;
+import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
+
 /**
  *
  * @author jamesrobison
@@ -17,6 +20,7 @@ package citbyui.cit260.brassPlatesTeam.view;
                     + "\n-------------------------------"
                     + "\nL- Talk to Laban              |"
                     + "\nS- Talk to Servant            |"
+                    + "\nG- Find the mass of Gold      |"
                     + "\n-------------------------------");
     }
     
@@ -29,6 +33,9 @@ package citbyui.cit260.brassPlatesTeam.view;
                 break;
             case "S":
                 this.talkToServant();
+                break;
+            case "G":
+                this.massOfGold();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -43,4 +50,47 @@ package citbyui.cit260.brassPlatesTeam.view;
     private void talkToServant() {
         System.out.println("\n*** talkToServant() function called ***");
     }
+    public void calcContainer(){
+        try{
+        InventoryControl.calcAmountOfGoldAndSilver(0, 0, 0);
+        } 
+        catch (InventoryControlException ice){
+        System.out.println(ice.getMessage());
+        }
+    }
+    private Double massOfGold() {
+        
+        displayMassOfGoldBanner();
+        Double number = null;
+   
+        while (number == null){
+            String value = this.getInput();
+            value = value.trim().toUpperCase();
+            
+            if(value.equals("G"))
+                break;
+            //parse and convert number from text to a double
+            try{
+                number = Double.parseDouble(value);
+            }
+            catch(NumberFormatException nf){
+                System.out.println("\nTry again or press 'Q' to quit."
+                                    + "You must enter a valid number");
+            }
+        }
+        return number;
+    }
+    
+    private void displayMassOfGoldBanner() {
+        System.out.println(
+                "\n****************************************************************"
+              + "\n* Enter a valid mass of Gold                                   *"
+              + "\n****************************************************************"
+        );
+    
+    }
 }
+
+
+
+
