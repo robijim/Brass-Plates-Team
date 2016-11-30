@@ -7,6 +7,7 @@ package citbyui.cit260.brassPlatesTeam.view;
 
 import brassplateteam.BrassPlateTeam;
 import buyi.cit460.brassPlatesTeam.control.MapControl;
+import byui.cit260.brassPlatesTeam.exceptions.MapControlException;
 import byui.cit260.brassPlatesTeam.model.BrassPlates;
 import byui.cit260.brassPlatesTeam.model.Game;
 import byui.cit260.brassPlatesTeam.model.Item;
@@ -34,8 +35,12 @@ public class GameControl {
         BrassPlates brassplates= new BrassPlates();//create new Brass Plate
         game.setBrassplates(brassplates); //save in game
         
-        // move actors to starting position in the map
-        MapControl.moveActorsToStartingLocation(map);
+        try{
+            // move actors to starting position in the map
+            MapControl.moveActorsToStartingLocation(map);
+        } catch (MapControlException mce){
+            System.out.println(mce.getMessage());
+        }
     }
 
     static void displayHelpMenuView() {

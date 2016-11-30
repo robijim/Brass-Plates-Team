@@ -30,6 +30,7 @@ public class GameMenuView extends View{
                 + "\nF - Search current location   |"
                 + "\nP - Pick up item              |"
                 + "\nD - Drop item                 |"
+                + "\nT - Measure tree found        |"
                 + "\nS - Save and Continue         |"
                 + "\nQ- Quit                       |"
                 + "\n-------------------------------");
@@ -63,6 +64,9 @@ public class GameMenuView extends View{
              break;
             case "K": //know the goal of the quest
              this.measurePlank();
+             break;
+             case "T": 
+             this.measureTree();
              break;
              case "S": //know the goal of the quest
              this.saveAndContinue();
@@ -181,5 +185,27 @@ public class GameMenuView extends View{
               + "\n* Enter a valid number of planks                               *"
               + "\n****************************************************************"
         );
+    }
+    
+    private Double measureTree()
+    {
+        System.out.print("*Enter a valid number for the tree found.");
+        
+        Double tree = null;
+        
+        while (tree == null){
+            String value = this.getInput();
+            value = value.trim().toUpperCase();
+            
+            if(value.equals('T'))
+                break;
+            
+            try{
+                tree = Double.parseDouble(value);
+            } catch(NumberFormatException ne){
+                System.out.println("Try again!");
+            }
+        }
+        return tree;
     }
 }
