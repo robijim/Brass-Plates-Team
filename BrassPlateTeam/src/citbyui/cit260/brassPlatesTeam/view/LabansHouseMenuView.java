@@ -41,9 +41,6 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
             case "G":
                 this.massOfGold();
                 break;
-            case "G":
-                this.massOfGold();
-                break;
             default:
                 ErrorView.display(this.getClass().getName(),
                         "\n*** Invalid selection *** Try again");

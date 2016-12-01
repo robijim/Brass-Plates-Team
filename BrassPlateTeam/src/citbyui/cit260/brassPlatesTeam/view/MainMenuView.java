@@ -7,6 +7,7 @@ package citbyui.cit260.brassPlatesTeam.view;
 
 import byui.cit260.brassPlatesTeam.exceptions.GameControlException;
 import brassplateteam.BrassPlateTeam;
+import buyi.cit460.brassPlatesTeam.control.GameControl;
 
 /**
  *
@@ -88,7 +89,21 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("\n*** startExistingGame function called ***");
+       //prompt for and get the name of the file to save game in 
+        this.console.println("\n\nEnter the file path for file where the game "
+                             + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try{
+        // save the game to the specified file
+        GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+        ErrorView.display("MainMenuView", ex.getMessage());
+       
+        }
+        //display the gameMenu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void displayHelpMenu() {
@@ -101,7 +116,17 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame function called ***");
+        //prompt for and get the name of the file to save game in 
+        this.console.println("\n\nEnter the file path for file where the game "
+                             + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try{
+        // save the game to the specified file
+        GameControl.saveGame(BrassPlateTeam.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+        ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void displayLocationMenu() {
@@ -124,7 +149,7 @@ public class MainMenuView extends View {
         gameMenu.display();
     }
 
-    private void displayLabansHouseMenu() {
+   private void displayLabansHouseMenu() {
         GameControl.displayLabansHouseMenuView();
         
         LabansHouseMenuView labansHouse = new LabansHouseMenuView();
