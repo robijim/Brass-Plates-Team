@@ -20,8 +20,7 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
                     + "\n-------------------------------"
                     + "\nL- Talk to Laban              |"
                     + "\nS- Talk to Servant            |"
-                    + "\nC- Mass of container          |"
-                    + "\nG- Mass of gold               |"
+                    + "\nG- Find the mass of Gold      |"
                     + "\n-------------------------------");
     }
     
@@ -42,8 +41,12 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
             case "G":
                 this.massOfGold();
                 break;
+            case "G":
+                this.massOfGold();
+                break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -62,7 +65,6 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
         catch (InventoryControlException ice){
         System.out.println(ice.getMessage());
         }
-       
     }
     private Double massOfGold() {
         
@@ -80,19 +82,20 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
                 number = Double.parseDouble(value);
             }
             catch(NumberFormatException nf){
-                System.out.println("\nTry again or press 'Q' to quit."
+                ErrorView.display(this.getClass().getName(),
+                                    "\nTry again or press 'Q' to quit."
                                     + "You must enter a valid number");
             }
-           
         }
-   return number;
+        return number;
     }
     
     private void displayMassOfGoldBanner() {
         System.out.println(
                 "\n****************************************************************"
               + "\n* Enter a valid mass of Gold                                   *"
-              + "\n****************************************************************");
+              + "\n****************************************************************"
+        );
     
     }
 }

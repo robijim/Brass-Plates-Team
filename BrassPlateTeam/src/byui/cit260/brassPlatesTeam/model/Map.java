@@ -5,6 +5,7 @@
  */
 package byui.cit260.brassPlatesTeam.model;
 
+import citbyui.cit260.brassPlatesTeam.view.ErrorView;
 import java.io.Serializable;
 
 /**
@@ -25,7 +26,8 @@ public class Map implements Serializable{
     
     public Map(int nRows, int nColumns) {
         if(nRows<1 || nColumns<1) {
-            System.out.println("The number of rows and columns must be greater than 0.");
+            ErrorView.display(this.getClass().getName(),
+                    "The number of rows and columns must be greater than 0.");
             return;
         }
         this.nRows = nRows;

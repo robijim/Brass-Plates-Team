@@ -72,7 +72,8 @@ public class GameMenuView extends View{
              this.saveAndContinue();
              break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -172,7 +173,8 @@ public class GameMenuView extends View{
                 number = Double.parseDouble(value);
             }
             catch(NumberFormatException nf){
-                System.out.println("Try again or press 'Q' to quit."
+                ErrorView.display(this.getClass().getName(),
+                                    "Try again or press 'Q' to quit."
                                     + "You must enter a valid number");
             }
             }
@@ -189,7 +191,8 @@ public class GameMenuView extends View{
     
     private Double measureTree()
     {
-        System.out.print("*Enter a valid number for the tree found.");
+        ErrorView.display(this.getClass().getName(),
+                "*Enter a valid number for the tree found.");
         
         Double tree = null;
         

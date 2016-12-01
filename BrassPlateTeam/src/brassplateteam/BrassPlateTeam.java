@@ -8,6 +8,10 @@ package brassplateteam;
 import byui.cit260.brassPlatesTeam.model.Game;
 import byui.cit260.brassPlatesTeam.model.Player;
 import citbyui.cit260.brassPlatesTeam.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 /*import byui.cit260.brassPlatesTeam.model.Game;
 import byui.cit260.brassPlatesTeam.model.Inventory;
@@ -31,16 +35,45 @@ public class BrassPlateTeam {
     private static Game currentGame = null;
     private static Player player = null;
     
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
+    
     public static void main(String[] args) {
         
-        //Create StartProgramViewOrig and display the start program view
-        StartProgramView startProgramView = new StartProgramView();
-        try{
+        try {
+            BrassPlateTeam.inFile = 
+                    new BufferedReader (new InputStreamReader(System.in));
+            BrassPlateTeam.outFile = new PrintWriter (System.out, true);
+            
+            //open log file
+            String filePath = "log.txt";
+            BrassPlateTeam.logFile = new PrintWriter(filePath);
+            
+            //Create StartProgramViewOrig and display the start program view
+            StartProgramView startProgramView = new StartProgramView();
             startProgramView.display(); 
-        } catch (Throwable te){
-            System.out.println(te.getMessage());
-            te.printStackTrace();
-            startProgramView.display();
+        } catch (Throwable e){
+            System.out.println("Exception: " + e.toString() + 
+                                "\nCause: " + e.getCause() +
+                                "\nMessage: " + e.getMessage());
+            e.printStackTrace();;
+        } finally {
+            try {
+                if (BrassPlateTeam.inFile != null)
+                    BrassPlateTeam.inFile.close();
+                
+                if (BrassPlateTeam.outFile != null)
+                    BrassPlateTeam.outFile.close();
+                
+                if (BrassPlateTeam.logFile != null)
+                    BrassPlateTeam.logFile.close();
+                
+            } catch (IOException ex) {
+                System.out.println("Error closing the files");
+                return;
+            }
         }
     }
 
@@ -58,6 +91,30 @@ public class BrassPlateTeam {
 
     public static void setPlayer(Player player) {
         BrassPlateTeam.player = player;
+    }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        BrassPlateTeam.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        BrassPlateTeam.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        BrassPlateTeam.logFile = logFile;
     }
   
 }
