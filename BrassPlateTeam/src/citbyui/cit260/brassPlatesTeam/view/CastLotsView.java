@@ -44,7 +44,8 @@ public class CastLotsView extends View {
                this.returnToMainMenu();
                break;*/
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -61,10 +62,12 @@ public class CastLotsView extends View {
                             if(toss == 2) {
                                 result = toss-1;
                                     if(toss == 1) {
-                                        System.out.println("And the lot fell upon Laman, and he went in alone unto the house of Laban.");
+                                        ErrorView.display(this.getClass().getName(),
+                                                "And the lot fell upon Laman, and he went in alone unto the house of Laban.");
                                         if(toss == 6 || toss == 5) {
                                             result = -1;
-                                            System.out.println("Must roll a 4 for Nephi, a 3 for Samm, a 2 for Lemuel, or a 1 for Laman" + "Please roll again.");
+                                            ErrorView.display(this.getClass().getName(),
+                                                    "Must roll a 4 for Nephi, a 3 for Samm, a 2 for Lemuel, or a 1 for Laman" + "Please roll again.");
                                     ;
                                 }
                             }

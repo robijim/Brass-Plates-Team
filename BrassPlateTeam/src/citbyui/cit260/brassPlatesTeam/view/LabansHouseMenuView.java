@@ -38,7 +38,8 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
                 this.massOfGold();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -74,7 +75,8 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
                 number = Double.parseDouble(value);
             }
             catch(NumberFormatException nf){
-                System.out.println("\nTry again or press 'Q' to quit."
+                ErrorView.display(this.getClass().getName(),
+                                    "\nTry again or press 'Q' to quit."
                                     + "You must enter a valid number");
             }
         }
