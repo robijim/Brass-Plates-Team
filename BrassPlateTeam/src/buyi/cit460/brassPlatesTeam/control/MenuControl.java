@@ -5,10 +5,12 @@
  */
 package buyi.cit460.brassPlatesTeam.control;
 
+import citbyui.cit260.brassPlatesTeam.view.CastLotsView;
+
 /**
  *
  * @author camilaortega
  */
 public class MenuControl {
-    
-}
+
+    }

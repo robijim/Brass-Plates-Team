@@ -7,27 +7,27 @@ package byui.cit260.brassPlatesTeam.exceptions;
 
 /**
  *
- * @author JosephKH
+ * @author jamesrobison
  */
 public class MenuControlException extends Exception {
 
     public MenuControlException() {
     }
 
-    public MenuControlException(String string) {
-        super(string);
+    public MenuControlException(String message) {
+        super(message);
     }
 
-    public MenuControlException(String string, Throwable thrwbl) {
-        super(string, thrwbl);
+    public MenuControlException(String message, Throwable cause) {
+        super(message, cause);
     }
 
-    public MenuControlException(Throwable thrwbl) {
-        super(thrwbl);
+    public MenuControlException(Throwable cause) {
+        super(cause);
     }
 
-    public MenuControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
-        super(string, thrwbl, bln, bln1);
+    public MenuControlException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
     }
     
 }

@@ -40,9 +40,9 @@ public class CastLotsView extends View {
             case "R": //roll dice
                 this.rollDice();
                 break;
-            case "Q": //get and start an existing game
+            /*case "Q": //return to main menu
                this.returnToMainMenu();
-               break;
+               break;*/
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -50,12 +50,51 @@ public class CastLotsView extends View {
         return false;
     }
 
-        private void rollDice() {
-            System.out.println("***rollDice function has been called***");
-        }
-
-        private void returnToMainMenu() {
+        private int rollDice() {
+            int toss = (int) ((Math.random()*6) +1);
+//int toss = (int) ((Math.random()*6) +1);
+       int result = 0; 
+            if(toss == 4) {
+                result = toss-3;
+                    if(toss == 3) {
+                        result = toss-2;
+                            if(toss == 2) {
+                                result = toss-1;
+                                    if(toss == 1) {
+                                        System.out.println("And the lot fell upon Laman, and he went in alone unto the house of Laban.");
+                                        if(toss == 6 || toss == 5) {
+                                            result = -1;
+                                            System.out.println("Must roll a 4 for Nephi, a 3 for Samm, a 2 for Lemuel, or a 1 for Laman" + "Please roll again.");
+                                    ;
+                                }
+                            }
+                        }
+                }
+                }
+        return result;
+                }
+}
+                /*Random toss = new Random(4);
+                //for (toss=1; toss<5; toss++) {               
+                    //int result;
+                switch (toss) {
+                    case 1: 
+                        System.out.println("And the lot fell upon Laman, and he went in unto the house of Laban");
+                    break;
+                    case 2:
+                        ;
+                    break;
+                    case 3: toss - 2;
+                    break;
+                    
+                    case 4: toss - 3;
+                    default: 
+                        System.out.println("Try again!");-1
+                }
+            }
+        }*/
+        /*private void returnToMainMenu() {
             System.out.println("returnToMainMenu has been called");
-        }
+        }*/
         
-    }
+    

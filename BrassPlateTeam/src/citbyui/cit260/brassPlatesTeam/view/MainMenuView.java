@@ -6,7 +6,6 @@
 package citbyui.cit260.brassPlatesTeam.view;
 
 import byui.cit260.brassPlatesTeam.exceptions.GameControlException;
-import byui.cit260.brassPlatesTeam.exceptions.GameControlException;
 import brassplateteam.BrassPlateTeam;
 
 /**
@@ -63,7 +62,7 @@ public class MainMenuView extends View {
             case "Z": //display Laban's house menu
              this.displayLabansHouseMenu();
              break;
-            case "W": //display the help menu
+            case "R": //display the help menu
              this.displayCastLotsView();
              break;
             case "G": //save the current game

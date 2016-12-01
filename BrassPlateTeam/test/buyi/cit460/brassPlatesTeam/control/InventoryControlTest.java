@@ -21,7 +21,7 @@ public class InventoryControlTest {
      * Test of calcContainersNeeded method, of class InventoryControl.
      */
     @Test
-    public void testCalcVolumeOfContainer() {
+    public double testCalcVolumeOfContainer() {
         System.out.println("calcVolumeOfContainer");
         
         /********

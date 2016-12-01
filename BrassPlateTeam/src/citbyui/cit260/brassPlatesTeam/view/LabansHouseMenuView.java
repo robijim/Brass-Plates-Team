@@ -20,12 +20,14 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
                     + "\n-------------------------------"
                     + "\nL- Talk to Laban              |"
                     + "\nS- Talk to Servant            |"
-                    + "\nG- Find the mass of Gold      |"
+                    + "\nC- Mass of container          |"
+                    + "\nG- Mass of gold               |"
                     + "\n-------------------------------");
     }
     
     @Override
-    public boolean doAction(String value) {
+    public boolean doAction(String value) { 
+        
         value = value.toUpperCase();
         switch(value){
             case "L":
@@ -33,6 +35,9 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
                 break;
             case "S":
                 this.talkToServant();
+                break;
+            case "C":
+                this.calcContainer();
                 break;
             case "G":
                 this.massOfGold();
@@ -57,6 +62,7 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
         catch (InventoryControlException ice){
         System.out.println(ice.getMessage());
         }
+       
     }
     private Double massOfGold() {
         
@@ -77,16 +83,16 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
                 System.out.println("\nTry again or press 'Q' to quit."
                                     + "You must enter a valid number");
             }
+           
         }
-        return number;
+   return number;
     }
     
     private void displayMassOfGoldBanner() {
         System.out.println(
                 "\n****************************************************************"
               + "\n* Enter a valid mass of Gold                                   *"
-              + "\n****************************************************************"
-        );
+              + "\n****************************************************************");
     
     }
 }
