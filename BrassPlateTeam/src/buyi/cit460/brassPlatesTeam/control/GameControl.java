@@ -16,9 +16,14 @@ import byui.cit260.brassPlatesTeam.model.Map;
 import byui.cit260.brassPlatesTeam.model.Player;
 import byui.cit260.brassPlatesTeam.model.Scene;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -143,6 +148,26 @@ public class GameControl {
         inventory[Item.Index.container.ordinal()] = container;
         
         return inventory;
+    }
+    
+    public void printInventoryListReport(ArrayList<Item> inventoryItems, String outputLocation) {
+       // create BufferedReader object for input file
+       try (PrintWriter out = new PrintWriter(outputLocation)) {
+           
+           //print title and column headings
+           out.println("\n\n        Inventory Report            ");
+           out.printf("%n%-20s%20s%20s", "Description", "Required Amount", "Quantity In Stock");
+           out.printf("%n%-20s%20s%20s", "-----------", "----------------", "-----------------");
+                //print the Description, Required Amount, and Quantity In Stock
+                for (Item item : inventoryItems) {
+                    out.printf("%n%-20s%7d%13.2f", item.getDescription()
+                                                 , item.getRequiredAmount()
+                                                 , item.getQuantityInStock());
+                }
+            }    catch (FileNotFoundException ex) {
+                    System.out.println("I/O Error: " + ex.getMessage());
+        }
+            
     }
 
     public static void getSavedGame(String filePath)
