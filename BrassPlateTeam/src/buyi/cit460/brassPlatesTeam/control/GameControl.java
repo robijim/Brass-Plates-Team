@@ -149,26 +149,6 @@ public class GameControl {
         
         return inventory;
     }
-    
-    public void printInventoryListReport(ArrayList<Item> inventoryItems, String outputLocation) {
-       // create BufferedReader object for input file
-       try (PrintWriter out = new PrintWriter(outputLocation)) {
-           
-           //print title and column headings
-           out.println("\n\n        Inventory Report            ");
-           out.printf("%n%-20s%20s%20s", "Description", "Required Amount", "Quantity In Stock");
-           out.printf("%n%-20s%20s%20s", "-----------", "----------------", "-----------------");
-                //print the Description, Required Amount, and Quantity In Stock
-                for (Item item : inventoryItems) {
-                    out.printf("%n%-20s%7d%13.2f", item.getDescription()
-                                                 , item.getRequiredAmount()
-                                                 , item.getQuantityInStock());
-                }
-            }    catch (FileNotFoundException ex) {
-                    System.out.println("I/O Error: " + ex.getMessage());
-        }
-            
-    }
 
     public static void getSavedGame(String filePath)
         throws GameControlException{

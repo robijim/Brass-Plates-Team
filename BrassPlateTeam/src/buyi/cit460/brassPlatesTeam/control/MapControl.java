@@ -6,11 +6,20 @@
 package buyi.cit460.brassPlatesTeam.control;
 
 import brassplateteam.BrassPlateTeam;
+import byui.cit260.brassPlatesTeam.exceptions.GameControlException;
 import byui.cit260.brassPlatesTeam.exceptions.MapControlException;
 import byui.cit260.brassPlatesTeam.model.Actor;
 import byui.cit260.brassPlatesTeam.model.Map;
 import byui.cit260.brassPlatesTeam.model.Scene;
 import java.awt.Point;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 
 /**
  *
@@ -19,6 +28,7 @@ import java.awt.Point;
 public class MapControl {
 
     private static String False;
+    public static PrintWriter outFile;
 
     public static void moveActorToLocation(Actor actor, Point coordinates)
         throws MapControlException{
@@ -253,8 +263,23 @@ public class MapControl {
             return scene;
     }
 
-    public static String getMapSymbol() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public static String getMapSymbol(String filepath) throws IOException{
+         
+        try( FileInputStream fips = new FileInputStream(filepath))
+        ObjectInputStream input = new ObjectInputStream(fips);
+        }
+        
+        
+    public static void printLocationMapSymbols(PrintWriter outFile, String filePath) throws GameControlException{
+        
+        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(outFile);
+        } catch(Exception e)
+            {
+                throw new GameControlException(e.getMessage());
+            }
+        }
 
     }

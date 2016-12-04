@@ -35,7 +35,7 @@ public class BrassPlateTeam {
     private static Game currentGame = null;
     private static Player player = null;
     
-    private static PrintWriter outFile = null;
+    public static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
     
     private static PrintWriter logFile = null;
