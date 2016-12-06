@@ -13,7 +13,7 @@ import java.util.Objects;
  * @author JosephKH
  */
 public class Item implements Serializable{
-    public enum Index {
+    public enum inventory {
         plank,
         gold,
         silver,

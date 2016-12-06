@@ -6,10 +6,18 @@
 package citbyui.cit260.brassPlatesTeam.view;
 
 import brassplateteam.BrassPlateTeam;
+import static brassplateteam.BrassPlateTeam.outFile;
 import byui.cit260.brassPlatesTeam.model.Game;
 import byui.cit260.brassPlatesTeam.model.Item;
+import byui.cit260.brassPlatesTeam.model.Item.inventory;
 import byui.cit260.brassPlatesTeam.model.Location;
 import byui.cit260.brassPlatesTeam.model.Map;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,6 +32,7 @@ public class GameMenuView extends View{
                 + "\n-------------------------------"
                 + "\nA - Access map                |"
                 + "\nI - Inventory                 |"
+                + "\nW - Save inventory            |"
                 + "\nV - Display map               |"
                 + "\nK - Measure plank             |"
                 + "\nM - Move to location          |"
@@ -70,6 +79,15 @@ public class GameMenuView extends View{
              break;
              case "S": //know the goal of the quest
              this.saveAndContinue();
+             case "W":
+                {
+                    try {
+                        this.saveInventory();
+                    } catch (IOException ex) {
+                        ErrorView.display(this.getClass().getName(), 
+                            "Error saving the list to the file.");
+                    }
+                }
              break;
             default:
                 ErrorView.display(this.getClass().getName(),
@@ -83,7 +101,7 @@ public class GameMenuView extends View{
         System.out.println("\n*** accessGame function called ***");
     }
 
-    private void viewInventory() {
+    public void viewInventory() {
         StringBuilder line;
         Game game = BrassPlateTeam.getCurrentGame();
         Item[] inventory = game.getInventory();
@@ -101,6 +119,47 @@ public class GameMenuView extends View{
             line.insert(23, item.getRequiredAmount());
             line.insert(33, item.getQuantityInStock());
         }
+    }
+    
+    public void saveInventory() throws IOException{
+        FileWriter outFile = null;
+        this.console.println("Where will the list be saved?");
+        String fileLocation = this.getInput();
+        Game game = BrassPlateTeam.getCurrentGame();
+        Item[] inventory = game.getInventory();
+        
+        try {
+            saveInventoryFile(inventory, fileLocation);
+            outFile.flush();
+            this.console.println("Your file was saved successfully to the specified location.");
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), 
+                    "Error saving the list to the file.");
+        }
+    }
+    
+    public void saveInventoryFile(Item[] inventory, String fileLocation) throws IOException{
+        
+        try(PrintWriter out = new PrintWriter (fileLocation)) {
+            
+            out.println("\n\n           INVENTORY REPORT        ");
+            out.printf("%n%-20s%10s", "Description", "Quantity");
+            out.printf("%n%-20s%10s", "-----------", "--------");
+            
+            for (Item item: inventory) {
+                out.printf("%n%-20s%7d", item.getDescription()
+                        , item.getQuantityInStock());
+            }
+            
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(),
+                    "I/O Error: " + ex.getMessage());     
+        } finally {
+            if (outFile != null){
+                outFile.close();
+            }
+        }
+        
     }
 
     private void moveLocation() {

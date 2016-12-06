@@ -13,10 +13,9 @@ import byui.cit260.brassPlatesTeam.model.Map;
 import byui.cit260.brassPlatesTeam.model.Scene;
 import java.awt.Point;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
@@ -263,23 +262,25 @@ public class MapControl {
             return scene;
     }
 
-    public static String getMapSymbol(String filepath) throws IOException{
+    public static String getMapSymbol() throws IOException{
          
-        try( FileInputStream fips = new FileInputStream(filepath))
-        ObjectInputStream input = new ObjectInputStream(fips);
+        try( FileInputStream fips = new FileInputStream(filepath)){
+            ObjectInputStream input = new ObjectInputStream(fips);
         }
-        
-        
-    public static void printLocationMapSymbols(PrintWriter outFile, String filePath) throws GameControlException{
+    }
+    public static void printLocationMapSymbols(PrintWriter outFile) throws GameControlException{
+        FileWriter outFile = null;
+        this.console.println("Where will the list be saved?");
+        String filepath = this.getInput();
         
         try( FileOutputStream fops = new FileOutputStream(filepath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
             
             output.writeObject(outFile);
-        } catch(Exception e)
+        } catch(GameControlException e)
             {
                 throw new GameControlException(e.getMessage());
             }
-        }
-
     }
+
+}
