@@ -19,6 +19,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -269,8 +276,8 @@ public class MapControl {
         }
     }
     public static void printLocationMapSymbols(PrintWriter outFile) throws GameControlException{
-        FileWriter outFile = null;
-        this.console.println("Where will the list be saved?");
+        FileWriter outFile = /jamesrobison/desktop/CourseMaterials/CIT260JavaProgramming/MapSymbol.txt;
+        this.console.println("/jamesrobison/desktop/CourseMaterials/CIT260JavaProgramming/MapSymbol.txt");
         String filepath = this.getInput();
         
         try( FileOutputStream fops = new FileOutputStream(filepath)) {
@@ -281,6 +288,47 @@ public class MapControl {
             {
                 throw new GameControlException(e.getMessage());
             }
+        BrassPlateTeam.setOutFile(outFile);*/
+        //I found this snippet of code online for writing to an external file using this Charset method - Jim
+        /*Charset utf8 = StandardCharsets.UTF_8;
+List<String> lines = Arrays.asList("1st line", "2nd line");
+byte[] data = {1, 2, 3, 4, 5};
+
+try {
+    Files.write(Paths.get("file1.bin"), data);
+    Files.write(Paths.get("file2.bin"), data,
+            StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+    Files.write(Paths.get("file3.txt"), "content".getBytes());
+    Files.write(Paths.get("file4.txt"), "content".getBytes(utf8));
+    Files.write(Paths.get("file5.txt"), lines, utf8);
+    Files.write(Paths.get("file6.txt"), lines, utf8,
+            StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+} catch (IOException e) {
+    e.printStackTrace();
+}*/
+        //Another snippet of code that I found online using the writer method
+        /* public void writing() {
+        try {
+            //Whatever the file path is.
+            File statText = new File("E:/Java/Reference/bin/images/statsTest.txt");
+            FileOutputStream is = new FileOutputStream(statText);
+            OutputStreamWriter osw = new OutputStreamWriter(is);    
+            Writer w = new BufferedWriter(osw);
+            w.write("POTATO!!!");
+            w.close();
+        } catch (IOException e) {
+            System.err.println("Problem writing to the file statsTest.txt");
+        }
+    }
+
+    public static void main(String[]args) {
+        writer write = new writer();
+        write.writing();
+    }*/
+    }
+
+    public static void printLocationMapSymbols(PrintWriter outFile, String filepath) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
