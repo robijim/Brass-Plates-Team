@@ -276,7 +276,37 @@ public class MapControl {
         }
     }
     public static void printLocationMapSymbols(PrintWriter outFile) throws GameControlException{
-        FileWriter outFile = /jamesrobison/desktop/CourseMaterials/CIT260JavaProgramming/MapSymbol.txt;
+        FileWriter outFile = null; // define a variable for a file stream
+        // Specify the file location of the file
+        String fileLocation = "/jamesrobison/desktop/CourseMaterials/mapsymbols.txt"
+        
+    try{   // Create and open a new file stream fo rthe output file
+        outFile = new FileWriter(fileLocation);
+        
+        //write each name to the file stream for the output file
+        outFile.write(" ST \n");
+        outFile.write(" DS \n");
+        outFile.write(" CG \n");
+        outFile.write(" LH2 \n");
+        outFile.write(" RS \n");
+        outFile.write(" LH2 \n");
+        outFile.write(" AS \n");
+        outFile.write(" TS \n");
+        outFile.write(" FS \n");
+       
+        outFile.flush();
+    } catch (IOException ex) {
+        System.out.println("Error saving Map Symbols to file");
+    } finally {
+        if (outFile != null) {//if the file was successfully created
+            outFile.close();
+        }
+        }
+    }
+        
+        /*FileWriter outFile = "/jamesrobison/desktop/CourseMaterials/CIT260JavaProgramming/MapSymbol.txt"
+                
+                ;
         this.console.println("/jamesrobison/desktop/CourseMaterials/CIT260JavaProgramming/MapSymbol.txt");
         String filepath = this.getInput();
         
@@ -288,7 +318,7 @@ public class MapControl {
             {
                 throw new GameControlException(e.getMessage());
             }
-        BrassPlateTeam.setOutFile(outFile);*/
+        BrassPlateTeam.setOutFile(outFile); */
         //I found this snippet of code online for writing to an external file using this Charset method - Jim
         /*Charset utf8 = StandardCharsets.UTF_8;
 List<String> lines = Arrays.asList("1st line", "2nd line");
