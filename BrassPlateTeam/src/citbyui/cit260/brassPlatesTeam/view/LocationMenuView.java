@@ -22,7 +22,7 @@ public class LocationMenuView extends View{
                     + "\n-------------------------------"
                     + "\nL- Location                   |"
                     + "\nN- Next location              |"
-                    + "\nP- Print location             |"
+                    + "\nP- Print Locations            |"
                     + "\nQ- Quit                       |"
                     + "\n-------------------------------");
     }
