@@ -15,6 +15,8 @@ import byui.cit260.brassPlatesTeam.model.Location;
 import byui.cit260.brassPlatesTeam.model.Map;
 import byui.cit260.brassPlatesTeam.model.Player;
 import byui.cit260.brassPlatesTeam.model.Scene;
+import citbyui.cit260.brassPlatesTeam.view.CastLotsView;
+import static citbyui.cit260.brassPlatesTeam.view.CastLotsView.rollDice;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -103,10 +105,33 @@ public class GameControl {
         System.out.println("\n*** displayLocationMenuView function called ***");
     }
 
-   public static void displayCastLotsView() {
-        System.out.println("\n***displayCastLotsMenuView function called***");   
-    }
-
+   public static CastLotsView displayCastLotsView() {
+        CastLotsView rollDice;
+        rollDice = new CastLotsView();
+        rollDice.display();
+/*public static void createNewGame(Player player) {
+        Game game = new Game(); // create new game
+        BrassPlateTeam.setCurrentGame(game); //save in BrassPlate
+        
+        game.setPlayer(player); //save player in game
+        
+        //create the inventory and save in the game
+        Item[] inventory = GameControl.createInventoryList();
+        game.setInventory(inventory);
+        
+        Map map = MapControl.createMap(); // create new map
+        game.setMap(map); //save map
+        
+        BrassPlates brassplates= new BrassPlates();//create new Brass Plate
+        game.setBrassplates(brassplates); //save in game
+        
+        try{
+            // move actors to starting position in the map
+            MapControl.moveActorsToStartingLocation(map);
+        } catch (MapControlException mce){
+            System.out.println(mce.getMessage());
+        }
+    }*/
     public static void displayGameView() {
         System.out.println("\n***displayGameView function called***");
     }

@@ -13,6 +13,8 @@ import java.util.Scanner;
  */
 public class CastLotsView extends View {
 
+    public static CastLotsView rollDice;
+
     //Display a menu with options used to cast lots or in other words roll the dice.  There are 4 numbers corresponding each corresponding to the characters.  Laman is eldest or #1, Lemuel is #2, Sam is #3, and Nephi is #4.
     public CastLotsView() {
               super("\n-------------------------------"
@@ -21,6 +23,10 @@ public class CastLotsView extends View {
                    +"\nR- Roll Dice                   "
                    +"\nQ- Exit to Main Menu           "
                    +"\n-------------------------------");
+    }
+
+    public CastLotsView(CastLotsView rollDice) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     //Each time a number is picked a dialogue will be created either prompting the player to roll the dice again or will give an account of the success of the failure of the person who just attempted the desired quest.     //When the players number is called, the view will display a message to the user that it is the player's turn to complete the quest.
