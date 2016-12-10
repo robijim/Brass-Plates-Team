@@ -30,7 +30,7 @@ public class GameMenuView extends View{
                 + "\n-------------------------------"
                 + "\n| Game Menu                   |"
                 + "\n-------------------------------"
-                + "\nA - Access map                |"
+                + "\nA - Access game               |"
                 + "\nI - Inventory                 |"
                 + "\nW - Save inventory            |"
                 + "\nV - Display map               |"

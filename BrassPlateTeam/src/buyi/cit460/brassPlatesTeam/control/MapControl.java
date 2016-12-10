@@ -26,6 +26,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -269,16 +271,17 @@ public class MapControl {
             return scene;
     }
 
-    public static String getMapSymbol() throws IOException{
-         
-        try( FileInputStream fips = new FileInputStream(filepath)){
-            ObjectInputStream input = new ObjectInputStream(fips);
-        }
-    }
-    public static void printLocationMapSymbols(PrintWriter outFile) throws GameControlException{
+//    public static String getMapSymbol() throws IOException{
+////         
+////        try( FileInputStream fips = new FileInputStream(filepath)){
+////            ObjectInputStream input = new ObjectInputStream(fips);
+////        }
+//        return null;
+//    }
+    public static void printLocationMapSymbols() throws GameControlException{
         FileWriter outFile = null; // define a variable for a file stream
         // Specify the file location of the file
-        String fileLocation = "/jamesrobison/desktop/CourseMaterials/mapsymbols.txt"
+        String fileLocation = "/jamesrobison/desktop/CourseMaterials/mapsymbols.txt";
         
     try{   // Create and open a new file stream fo rthe output file
         outFile = new FileWriter(fileLocation);
@@ -298,8 +301,12 @@ public class MapControl {
     } catch (IOException ex) {
         System.out.println("Error saving Map Symbols to file");
     } finally {
-        if (outFile != null) {//if the file was successfully created
+        if (outFile != null) {try {
+            //if the file was successfully created
             outFile.close();
+            } catch (IOException ex) {
+                System.out.println("Error closing file.");
+            }
         }
         }
     }
@@ -355,10 +362,9 @@ try {
         writer write = new writer();
         write.writing();
     }*/
-    }
-
-    public static void printLocationMapSymbols(PrintWriter outFile, String filepath) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//
+//    public static void printLocationMapSymbols(PrintWriter outFile, String filepath) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
 }

@@ -56,8 +56,7 @@ public abstract class View implements ViewInterface{
               
           try {
               
-            while (!valid) { //loop while an invalid value is entered
-                System.out.println("\n" + this.displayMessage);  
+            while (!valid) { //loop while an invalid value is entered  
                 value = this.keyboard.readLine(); //get next line typed on keyboard
                 
                 value = value.trim(); //trim off leading and trailing blanks

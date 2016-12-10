@@ -21,6 +21,7 @@ public class LocationMenuView extends View{
                     + "\n-------------------------------"
                     + "\nL- Location                   |"
                     + "\nN- Next location              |"
+                    + "\nP- Print location             |"
                     + "\nQ- Quit                       |"
                     + "\n-------------------------------");
     }
@@ -70,7 +71,7 @@ public class LocationMenuView extends View{
       
       try{
           //Print report to the specified file
-          MapControl.printLocationMapSymbols(MapControl.outFile, filepath);
+          MapControl.printLocationMapSymbols();
       } catch (Exception ex) {
           ErrorView.display("LocationMenuView", ex.getMessage());
       }
