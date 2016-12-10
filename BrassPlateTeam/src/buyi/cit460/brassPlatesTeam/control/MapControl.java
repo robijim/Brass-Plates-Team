@@ -281,7 +281,7 @@ public class MapControl {
     public static void printLocationMapSymbols() throws GameControlException{
         FileWriter outFile = null; // define a variable for a file stream
         // Specify the file location of the file
-        String fileLocation = "/jamesrobison/desktop/CourseMaterials/mapsymbols.txt";
+        String fileLocation = "mapsymbols.txt";
         
     try{   // Create and open a new file stream fo rthe output file
         outFile = new FileWriter(fileLocation);

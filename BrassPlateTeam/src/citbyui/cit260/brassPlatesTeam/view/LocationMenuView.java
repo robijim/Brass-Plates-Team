@@ -6,6 +6,7 @@
 package citbyui.cit260.brassPlatesTeam.view;
 import brassplateteam.BrassPlateTeam;
 import buyi.cit460.brassPlatesTeam.control.MapControl;
+import buyi.cit460.brassPlatesTeam.control.SceneType;
 import byui.cit260.brassPlatesTeam.model.Map;
 import java.util.Scanner;
 /**
@@ -55,15 +56,12 @@ public class LocationMenuView extends View{
     }
 
     private void printLocationMapSymbols() {
-        String start = " ST ";
-        String desert = " DS ";
-        String cityGate = " CG ";
-        String labanHouse1 = " LH2 ";
-        String resource = " RS ";
-        String labanHouse2 = " LH2 ";
-        String armor = " AS ";
-        String treasury = " TS ";
-        String finish = " FS ";
+        
+        for (SceneType type: SceneType.values() && MapSymbol mapSymbol:MapSymbol.values())
+        {
+            System.out.println(type);
+            System.out.println(mapSymbol);
+        }
         
       //prompt for and get the name of the file to print this report to.
       this.console.println("\n\nEnter the file path where this report will"                          + "be printed to");

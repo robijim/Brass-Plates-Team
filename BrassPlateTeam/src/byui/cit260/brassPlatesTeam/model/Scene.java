@@ -24,6 +24,17 @@ public class Scene implements Serializable{
         treasury,
         finish;
     }
+    public enum MapSymbol {
+        ST,
+        DS,
+        CG,
+        LH2,
+        RS,
+        LH2,
+        AS,
+        TS,
+        FS;
+    }
     
     private String description;
     private double travelTime;
