@@ -28,7 +28,7 @@ public class Scene implements Serializable{
         ST,
         DS,
         CG,
-        LH2,
+        LH1,
         RS,
         LH2,
         AS,
