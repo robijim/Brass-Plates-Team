@@ -118,6 +118,8 @@ public class GameMenuView extends View{
             line.insert(0, item.getDescription());
             line.insert(23, item.getRequiredAmount());
             line.insert(33, item.getQuantityInStock());
+            
+            System.out.println(line.toString());
         }
     }
     
@@ -194,25 +196,22 @@ public class GameMenuView extends View{
         
         System.out.println("\n---------------------------------------------------");
         System.out.println("  1    2    3    4    5    6    7    8    9    10");
-        System.out.println("\n---------------------------------------------------");
+        System.out.println("---------------------------------------------------");
         
-        for(int i = 1 ; i < 20 ; i++){
+        for(int i = 1 ; i < 10 ; i++){
             
-            if(i <= (20 - 1) && i != 0){
+            if(i <= (10 - 1) && i != 0){
                 System.out.print(i);
             }
             
-            for (int j = 0; j < 20; j++) {
+            for (int j = 0; j < 10; j++) {
                 
                 if(locations[i][j].getScene().getMapSymbol() == null) {
-                    System.out.print("??|");
+                    System.out.print("| ?? ");
                 } else {
                     System.out.print(" " + locations[i][j].getScene().getMapSymbol() + " ");
                 }
-                System.out.print("|");
             }
-            System.out.print("\n");
-            
             System.out.println("\n---------------------------------------------------");
         }
     }

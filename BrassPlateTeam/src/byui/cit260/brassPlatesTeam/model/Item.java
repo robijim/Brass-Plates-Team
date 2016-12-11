@@ -104,12 +104,13 @@ public class Item implements Serializable{
     }
 
     public Object getRequiredAmount() {
-        System.out.println("\n*** getRequiredAmount function called ***");
-        return null;
+        double amountNeeded = 200;
+        
+        return amountNeeded;
     }
 
     public Object getQuantityInStock() {
-        int total = 0;
+        double total = 0;
         for (int i=0; i <total; i++){
             total++;
         }

@@ -74,6 +74,7 @@ public class HelpMenuView extends View{
               + "\n* For this you can obtain different elements, and talk in      *"
               + "\n* various locations to different characters in the well known  *"
               + "\n* story.                                                       *"
+              + "\n*                                                              *"
               + "\n****************************************************************"
         );
     }
@@ -87,11 +88,20 @@ public class HelpMenuView extends View{
               + "\n* Laban's house, and end up talking with the servants to       *"
               + "\n* obtain the plates. You will start in the dessert, and you    *"
               + "\n* will have a long way! Good luck!                             *"
+              + "\n*                                                              *"
               + "\n****************************************************************"
         );
     }
 
     private void knowQuest() {
-        System.out.println("\n*** knowQuest function called ***");
+        System.out.println(
+                "\n****************************************************************"
+              + "\n*                                                              *"
+              + "\n* These are the locations in the quest:                        *"
+              + "\n*        Desert | City Gate | Laban's House                    *"
+              + "\n*        Resources | Armor | Treasury                          *"
+              + "\n*                                                              *"
+              + "\n****************************************************************"
+        );
     }
 }
