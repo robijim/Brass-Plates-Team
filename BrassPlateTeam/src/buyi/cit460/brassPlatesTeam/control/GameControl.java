@@ -109,7 +109,7 @@ public class GameControl {
         CastLotsView rollDice;
         rollDice = new CastLotsView();
         rollDice.display();
-
+   }
     public static void displayGameView() {
         System.out.println("\n***displayGameView function called***");
     }
@@ -130,25 +130,25 @@ public class GameControl {
         plank.setDescription("plank");
         plank.setQuantityInStock(0);
         plank.setRequiredAmount(0);
-        inventory[Item.Index.plank.ordinal()] = plank;
+        inventory[Item.inventory.plank.ordinal()] = plank;
         
         Item gold = new Item();
         gold.setDescription("gold");
         gold.setQuantityInStock(0);
         gold.setRequiredAmount(0);
-        inventory[Item.Index.gold.ordinal()] = gold;
+        inventory[Item.inventory.gold.ordinal()] = gold;
         
         Item silver = new Item();
         silver.setDescription("silver");
         silver.setQuantityInStock(0);
         silver.setRequiredAmount(0);
-        inventory[Item.Index.silver.ordinal()] = silver;
+        inventory[Item.inventory.silver.ordinal()] = silver;
         
         Item container = new Item();
         container.setDescription("container");
         container.setQuantityInStock(0);
         container.setRequiredAmount(0);
-        inventory[Item.Index.container.ordinal()] = container;
+        inventory[Item.inventory.container.ordinal()] = container;
         
         return inventory;
     }

@@ -4,11 +4,8 @@
  * and open the template in the editor.
  */
 package citbyui.cit260.brassPlatesTeam.view;
-import brassplateteam.BrassPlateTeam;
 import buyi.cit460.brassPlatesTeam.control.MapControl;
 import buyi.cit460.brassPlatesTeam.control.SceneType;
-import byui.cit260.brassPlatesTeam.model.Map;
-import java.util.Scanner;
 /**
  *
  * @author camilaortega
@@ -60,7 +57,7 @@ public class LocationMenuView extends View{
         for (SceneType type: SceneType.values() && MapSymbol mapSymbol:MapSymbol.values())
         {
             System.out.println(type);
-            System.out.println(mapSymbol);
+            System.out.println(MapControl.mapSymbol);
         }
         
       //prompt for and get the name of the file to print this report to.
@@ -74,7 +71,7 @@ public class LocationMenuView extends View{
           ErrorView.display("LocationMenuView", ex.getMessage());
       }
 //      LocationMenuView locationMenu = new LocationMenuView();
-      locationMenu.display();
+      LocationMenu.display();
     }
 }
 

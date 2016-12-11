@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package citbyui.cit260.brassPlatesTeam.view;
-import java.util.Scanner;
 
 /**
  *
@@ -57,11 +56,39 @@ public class HelpMenuView extends View{
     }
 
     private void howToPlay() {
-        System.out.println("\n*** howToPlay function called ***");
+        System.out.println(
+                "\n****************************************************************"
+              + "\n*                                                              *"
+              + "\n* Welcome to The Quest for the Brass Plates!  This is a game   *"
+              + "\n* of adventure, and peril as you navigate through a story      *"
+              + "\n* about Nephi and his brothers, as they are sent on a quest    *"
+              + "\n* to obtain a set of brass plates from the city of Jerusalem,  *"
+              + "\n* and return to their family who are three days journey into   *"
+              + "\n* the wilderness.  The success of your family’s journey        *"
+              + "\n* depends upon your choices, and ultimately upon your obtain-  *"
+              + "\n* ing the plates of brass.                                     *"
+              + "\n*                                                              *"
+              + "\n* Remember that the first thing you will see are the menus     *"
+              + "\n* and you will be able to select from the different options.   *"
+              + "\n* The goal is to get the BrassPlates as part of your inventory.*"
+              + "\n* For this you can obtain different elements, and talk in      *"
+              + "\n* various locations to different characters in the well known  *"
+              + "\n* story.                                                       *"
+              + "\n****************************************************************"
+        );
     }
 
     private void travelingGame() {
-        System.out.println("\n*** travelingGame function called ***");
+        
+        System.out.println(
+                "\n****************************************************************"
+              + "\n*                                                              *"
+              + "\n* Traveling as Nephi through the game will let you get into    *"
+              + "\n* Laban's house, and end up talking with the servants to       *"
+              + "\n* obtain the plates. You will start in the dessert, and you    *"
+              + "\n* will have a long way! Good luck!                             *"
+              + "\n****************************************************************"
+        );
     }
 
     private void knowQuest() {
