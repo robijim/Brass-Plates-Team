@@ -77,27 +77,3 @@ public class CastLotsView extends View {
         return result;
                 }
 }
-                /*Random toss = new Random(4);
-                //for (toss=1; toss<5; toss++) {               
-                    //int result;
-                switch (toss) {
-                    case 1: 
-                        System.out.println("And the lot fell upon Laman, and he went in unto the house of Laban");
-                    break;
-                    case 2:
-                        ;
-                    break;
-                    case 3: toss - 2;
-                    break;
-                    
-                    case 4: toss - 3;
-                    default: 
-                        System.out.println("Try again!");-1
-                }
-            }
-        }*/
-        /*private void returnToMainMenu() {
-            System.out.println("returnToMainMenu has been called");
-        }*/
-        
-    
