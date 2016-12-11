@@ -73,7 +73,7 @@ public class LocationMenuView extends View{
       } catch (Exception ex) {
           ErrorView.display("LocationMenuView", ex.getMessage());
       }
-      LocationMenuView locationMenu = new LocationMenuView();
+//      LocationMenuView locationMenu = new LocationMenuView();
       locationMenu.display();
     }
 }
