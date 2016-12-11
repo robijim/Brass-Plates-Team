@@ -25,10 +25,7 @@ public class CastLotsView extends View {
                    +"\n-------------------------------");
     }
 
-    public CastLotsView(CastLotsView rollDice) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
     //Each time a number is picked a dialogue will be created either prompting the player to roll the dice again or will give an account of the success of the failure of the person who just attempted the desired quest.     //When the players number is called, the view will display a message to the user that it is the player's turn to complete the quest.
     @Override
     public boolean doAction(String value) {
