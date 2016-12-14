@@ -20,7 +20,7 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
                     + "\n-------------------------------"
                     + "\nL- Talk to Laban              |"
                     + "\nS- Talk to Servant            |"
-                    + "\nG- Find the mass of Gold      |"
+                    + "\nG- Find the Brass Plates      |"
                     + "\n-------------------------------");
     }
     
@@ -90,7 +90,8 @@ import byui.cit260.brassPlatesTeam.exceptions.InventoryControlException;
     private void displayMassOfGoldBanner() {
         System.out.println(
                 "\n****************************************************************"
-              + "\n* Enter a valid mass of Gold                                   *"
+              + "\n* We will identify the Plates by its mass                      *"
+              + "\n* Enter a valid mass of Gold.                                  *"    
               + "\n****************************************************************"
         );
     

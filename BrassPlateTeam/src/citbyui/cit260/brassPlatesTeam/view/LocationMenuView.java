@@ -34,9 +34,10 @@ public class LocationMenuView extends View{
             case "N":
                 this.nextLocation();
                 break;
-            case "P":
+/*            case "P":
                 this.printLocationMapSymbols();
                 break;
+                */
             default:
                 ErrorView.display(this.getClass().getName(),
                         "\n*** Invalid selection *** Try again");
@@ -52,7 +53,7 @@ public class LocationMenuView extends View{
         System.out.println("\n*** nextLocation() function called ***");
     }
 
-    private void printLocationMapSymbols() {
+   /* private void printLocationMapSymbols() {
         
         for (SceneType type: SceneType.values() && MapSymbol mapSymbol:MapSymbol.values())
         {
@@ -73,5 +74,6 @@ public class LocationMenuView extends View{
 //      LocationMenuView locationMenu = new LocationMenuView();
       locationMenu.display();
     }
+*/
 }
 
