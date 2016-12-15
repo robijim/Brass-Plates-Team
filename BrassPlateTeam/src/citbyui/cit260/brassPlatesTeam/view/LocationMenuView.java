@@ -61,17 +61,17 @@ public class LocationMenuView extends View{
             System.out.println(MapControl.mapSymbol);
         }
         
-      //prompt for and get the name of the file to print this report to.
+      prompt for and get the name of the file to print this report to.
       this.console.println("\n\nEnter the file path where this report will"                          + "be printed to");
       String filepath = this.getInput();
       
       try{
-          //Print report to the specified file
+          Print report to the specified file
           MapControl.printLocationMapSymbols();
       } catch (Exception ex) {
           ErrorView.display("LocationMenuView", ex.getMessage());
       }
-//      LocationMenuView locationMenu = new LocationMenuView();
+      LocationMenuView locationMenu = new LocationMenuView();
       locationMenu.display();
     }
 */

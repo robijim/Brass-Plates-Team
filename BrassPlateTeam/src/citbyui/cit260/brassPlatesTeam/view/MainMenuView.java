@@ -20,13 +20,14 @@ public class MainMenuView extends View {
             + "\n-------------------------------"
             + "\n| Main Menu                   |"
             + "\n-------------------------------"
+            + "\nN- Start a new game           |"
             + "\nC- Continue saved game        |"
             + "\nS- Save game                  |"
             + "\nL- Location                   |"
             + "\nZ- Laban's House              |"               
             + "\nR- Roll dice                  |"
-            + "\nG- Game menu- Start new Game  |"
             + "\nH- Help                       |"
+            + "\nG- Game menu                  |"
             + "\nQ- Quit                       |"
             + "\n-------------------------------");
     }
@@ -47,6 +48,9 @@ public class MainMenuView extends View {
         value = value.toUpperCase(); //convert choice to upper case
         
         switch (value) {
+            case "N": //create and start a new game
+                this.startNewGame();
+                break;
             case "C": //get and start an existing game
                this.startExistingGame();
                break;
@@ -76,14 +80,14 @@ public class MainMenuView extends View {
         return false;
     }
 
- /*   private void startNewGame(){
-            //create a new game
-            GameControl.createNewGame(BrassPlateTeam.getPlayer());      
+    private void startNewGame(){
+        //create a new game
+        GameControl.createNewGame(BrassPlateTeam.getPlayer());      
         //display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
-    } */
-
+    }
+    
     private void startExistingGame() {
        //prompt for and get the name of the file to save game in 
         this.console.println("\n\nEnter the file path for file where the game "

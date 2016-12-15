@@ -7,11 +7,7 @@ package citbyui.cit260.brassPlatesTeam.view;
 
 import brassplateteam.BrassPlateTeam;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
